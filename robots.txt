@@ -1,0 +1,5 @@
+# TODO: klientka — podmienić example.pl na prawdziwą domenę
+User-agent: *
+Allow: /
+
+Sitemap: https://example.pl/sitemap.xml

@@ -1,0 +1,565 @@
+/* ==========================================================================
+   Strona psychoterapeutki — style główne
+   Wartości (kolory, rozmiary, odstępy, breakpointy) 1:1 z handoffu projektowego.
+   Breakpointy: 1040px (oferta 2 kolumny), 760px (układ 1-kolumnowy, menu mobilne),
+   560px (oferta 1 kolumna).
+   ========================================================================== */
+
+/* ---------- Tokeny ---------- */
+:root {
+  --teal: #3F7F86;            /* kolor główny: eyebrow, linki nav, kursywa H1, karta Konsultacja, tło Kontakt */
+  --bg: #FBF1E1;              /* tło strony */
+  --mint: #E3E9DA;            /* tło sekcji Oferta */
+  --row: #F6E8D0;             /* tło wierszy cennika (oraz pustych slotów na zdjęcia) */
+  --cta: #D97E22;             /* przycisk CTA */
+  --cta-hover: #B86A1E;       /* hover CTA, eyebrow hero, numery, lata, podpisy */
+  --eyebrow-on-teal: #F2B85B; /* eyebrow na tle teal */
+  --ink: #24322C;             /* tekst główny */
+  --body: #4A4336;            /* tekst akapitów */
+  --lead: #5A4E3C;            /* lead w hero */
+  --on-mint: #4A5B53;         /* tekst na tle mięty */
+  --muted: #6B5A3F;           /* tekst przygaszony */
+  --quote: #3A4A42;           /* cytaty */
+  --line: #E6D6BC;            /* linie podziału */
+
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --sans: 'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --container: 1120px;        /* szerokość treści (bez paddingu bocznego), jak w prototypie */
+  --gutter: 32px;
+}
+
+/* ---------- Krótki reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body, h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote, address { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; }
+address { font-style: normal; }
+
+/* Atrybut hidden zawsze wygrywa (m.in. sekcja Opinie, przycisk menu bez JS). */
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--ink); }
+a:hover { color: var(--teal); }
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Na tle teal obwódka w kolorze tła strony, żeby była widoczna. */
+.band--teal :focus-visible,
+.card--accent :focus-visible { outline-color: var(--bg); }
+
+/* ---------- Pomocnicze ---------- */
+.wrap {
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px; top: -100px;
+  z-index: 10;
+  background: var(--teal);
+  color: var(--bg);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.skip-link:focus { top: 16px; }
+.skip-link:hover { color: var(--bg); }
+.skip-link:focus-visible { outline-color: var(--ink); }
+
+
+/* Siatka 5/7 (domyślna) i 7/5 (hero) */
+.g2 {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 56px;
+  align-items: start;
+}
+
+/* Sekcje: 96px pionowo */
+.sec { padding-top: 96px; padding-bottom: 96px; }
+.sec--bottom { padding-bottom: 96px; }
+
+/* Pasy pełnej szerokości: 88px pionowo */
+.band { padding-top: 88px; padding-bottom: 88px; }
+.band--mint { background: var(--mint); }
+.band--teal { background: var(--teal); color: var(--bg); }
+
+/* Eyebrow */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  line-height: normal;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 16px;
+}
+.eyebrow--hero { color: var(--cta-hover); margin-bottom: 20px; text-wrap: pretty; }
+.eyebrow--on-teal { color: var(--eyebrow-on-teal); }
+
+/* H2 sekcji */
+.h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* Sloty na portrety (do czasu dostarczenia zdjęć przez klientkę) */
+.portrait {
+  position: relative;
+  background: var(--row);
+  border-radius: 24px;
+  overflow: hidden;
+}
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.portrait--hero { aspect-ratio: 4 / 5; }
+.portrait--about { aspect-ratio: 1 / 1; max-width: 320px; }
+
+/* ==========================================================================
+   Nawigacja
+   ========================================================================== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.nav__logo {
+  font-family: var(--serif);
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  font-size: 15px;
+  color: var(--teal);
+}
+.nav__links a { color: inherit; text-decoration: none; }
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav__cta {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cta-hover);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav__cta:hover { color: var(--cta-hover); }
+
+/* Przycisk menu (hamburger) — widoczny tylko ≤760px i tylko z JS */
+.nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.nav__toggle-bars,
+.nav__toggle-bars::before,
+.nav__toggle-bars::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+.nav__toggle-bars { position: relative; }
+.nav__toggle-bars::before,
+.nav__toggle-bars::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+.nav__toggle-bars::before { top: -7px; }
+.nav__toggle-bars::after { top: 7px; }
+
+/* Stan otwarty: ikona zmienia się w „X” (bez animacji) */
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars { background: transparent; }
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars::before { top: 0; transform: rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: center;
+  padding-top: 48px;
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(38px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -.015em;
+  margin: 0 0 24px;
+  text-wrap: pretty;
+}
+.hero__title em { color: var(--teal); }
+
+.hero__lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--lead);
+  margin: 0 0 32px;
+  max-width: 46ch;
+  text-wrap: pretty;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--cta);
+  color: var(--bg);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.btn:hover { background: var(--cta-hover); color: var(--bg); }
+
+.hero__phone {
+  font-size: 16px;
+  color: var(--teal);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   O mnie
+   ========================================================================== */
+.about__title { margin-bottom: 24px; }
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--body);
+  text-wrap: pretty;
+}
+
+.edu {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+
+.edu__list {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px 24px;
+  font-size: 16px;
+}
+.edu__list dt { color: var(--cta-hover); font-variant-numeric: tabular-nums; }
+.edu__list dd { margin: 0; }
+
+.edu__note {
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Oferta
+   ========================================================================== */
+.offer__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.offer__intro {
+  max-width: 44ch;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--on-mint);
+  text-wrap: pretty;
+}
+
+.offer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 28px;
+}
+.card__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 26px;
+  margin: 0 0 10px;
+  text-wrap: pretty;
+}
+.card__text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--on-mint);
+}
+.card--accent { background: var(--teal); color: var(--bg); }
+.card--accent .card__text { color: inherit; }
+
+/* ==========================================================================
+   Pierwsza wizyta
+   ========================================================================== */
+.steps { display: grid; }
+
+.step {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.step:last-child { border-bottom: 1px solid var(--line); }
+
+.step__num {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--cta-hover);
+  font-variant-numeric: tabular-nums;
+}
+.step__title {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+.step__text {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+/* ==========================================================================
+   Cennik
+   ========================================================================== */
+.pricing__title { margin-bottom: 16px; }
+
+.pricing__note {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 36ch;
+  text-wrap: pretty;
+}
+
+.prices { display: grid; gap: 12px; }
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  background: var(--row);
+  border-radius: 16px;
+  padding: 22px 28px;
+}
+.price__name { font-size: 18px; font-weight: 500; }
+.price__meta { font-size: 14px; color: var(--muted); }
+.price__amount {
+  font-family: var(--serif);
+  font-size: 28px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   Opinie (sekcja domyślnie ukryta atrybutem hidden w HTML)
+   ========================================================================== */
+.reviews__label { margin-bottom: 32px; }
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px 48px;
+}
+
+.review blockquote {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--quote);
+  text-wrap: pretty;
+}
+.review figcaption {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 14px;
+  color: var(--cta-hover);
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   Kontakt
+   ========================================================================== */
+.contact__title { margin-bottom: 20px; }
+
+.contact__intro {
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 40ch;
+  text-wrap: pretty;
+}
+
+.contact__list {
+  display: grid;
+  gap: 28px;
+  align-content: start;
+}
+
+.contact__label {
+  font-size: 13px;
+  opacity: .75;
+  margin-bottom: 6px;
+}
+
+.contact__link {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--bg);
+  text-decoration: none;
+}
+.contact__link:hover { color: var(--bg); }
+.contact__link--mail { word-break: break-word; }
+
+.contact__address {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Stopka
+   ========================================================================== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 28px var(--gutter);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Responsywność
+   ========================================================================== */
+@media (max-width: 1040px) {
+  .offer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  :root { --gutter: 20px; }
+
+  .g2,
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  /* Portret nad tekstem */
+  .hero__media { order: -1; max-width: 320px; width: 100%; }
+
+  .sec { padding-top: 64px; padding-bottom: 64px; }
+  .hero { padding-top: 48px; }
+  .sec--bottom { padding-bottom: 64px; }
+
+  .h2 { font-size: 32px; }
+
+  /* Menu mobilne: linki ukryte, przycisk widoczny (o ile JS go odsłonił) */
+  .nav__links { display: none; }
+  .nav__toggle { display: inline-flex; }
+
+  .nav.is-open .nav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    order: 3;
+    flex-basis: 100%;
+    margin-top: -8px;
+    font-size: 17px;
+  }
+  .nav.is-open .nav__links li + li { border-top: 1px solid var(--line); }
+  .nav.is-open .nav__links a { display: block; padding: 14px 0; }
+}
+
+@media (max-width: 560px) {
+  .offer { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- TODO: klientka — imię i nazwisko w tytule strony -->
+<title>Anna Kowalska — psychoterapia schematu i NLP, Warszawa i online</title>
+<meta name="description" content="Psychoterapia schematu, NLP i praca z traumą. Gabinet w Warszawie oraz spotkania online. Spokojnie, we własnym tempie, w relacji opartej na zaufaniu.">
+
+<!-- TODO: klientka — prawdziwa domena zamiast https://example.pl/ (canonical, og:url, og:image) -->
+<link rel="canonical" href="https://example.pl/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<!-- TODO: klientka — imię i nazwisko w og:title -->
+<meta property="og:title" content="Anna Kowalska — psychoterapia schematu i NLP, Warszawa i online">
+<meta property="og:description" content="Psychoterapia schematu, NLP i praca z traumą. Gabinet w Warszawie oraz spotkania online.">
+<meta property="og:url" content="https://example.pl/">
+<!-- TODO: klientka — przygotować og-image.png (1200×630 px) w katalogu głównym; plik jeszcze nie istnieje -->
+<meta property="og:image" content="https://example.pl/og-image.png">
+<meta name="twitter:card" content="summary">
+
+<meta name="theme-color" content="#FBF1E1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/nav.js" defer></script>
+
+<!-- TODO: klientka — wszystkie dane w JSON-LD: imię i nazwisko, telefon, e-mail, adres (ulica, kod pocztowy), ceny, domena -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "LocalBusiness"],
+  "name": "Anna Kowalska — Psychoterapia",
+  "description": "Psychoterapia schematu, NLP i praca z traumą. Gabinet w Warszawie oraz spotkania online.",
+  "url": "https://example.pl/",
+  "telephone": "+48600000000",
+  "email": "kontakt@example.pl",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Przykładowa 12/3",
+    "addressLocality": "Warszawa",
+    "postalCode": "00-000",
+    "addressCountry": "PL"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Warszawa" },
+    { "@type": "Country", "name": "Polska" }
+  ],
+  "knowsAbout": ["Terapia schematu", "NLP", "Praca z traumą"],
+  "priceRange": "200–220 zł",
+  "currenciesAccepted": "PLN",
+  "paymentAccepted": "Gotówka, karta, przelew",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cennik",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "price": "200",
+        "priceCurrency": "PLN",
+        "itemOffered": { "@type": "Service", "name": "Konsultacja wstępna", "description": "50 min" }
+      },
+      {
+        "@type": "Offer",
+        "price": "220",
+        "priceCurrency": "PLN",
+        "itemOffered": { "@type": "Service", "name": "Sesja stacjonarna", "description": "50 min, Warszawa" }
+      },
+      {
+        "@type": "Offer",
+        "price": "200",
+        "priceCurrency": "PLN",
+        "itemOffered": { "@type": "Service", "name": "Sesja online", "description": "50 min" }
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#tresc">Przejdź do treści</a>
+
+<header>
+  <nav class="nav wrap" id="nawigacja" aria-label="Główna nawigacja">
+    <!-- TODO: klientka — imię i nazwisko (logo tekstowe) -->
+    <a class="nav__logo" href="#top">Anna Kowalska</a>
+
+    <ul class="nav__links" id="menu">
+      <li><a href="#o-mnie">O mnie</a></li>
+      <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#wizyta">Pierwsza wizyta</a></li>
+      <li><a href="#cennik">Cennik</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <a class="nav__cta" href="#kontakt">Umów wizytę</a>
+      <!-- Przycisk menu mobilnego: odsłaniany przez js/nav.js (bez JS pozostaje ukryty) -->
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" hidden>
+        <span class="nav__toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="tresc" tabindex="-1">
+
+  <!-- ===== Hero ===== -->
+  <section id="top" class="wrap g2 hero sec" aria-labelledby="hero-title">
+    <div>
+      <p class="eyebrow eyebrow--hero">PSYCHOTERAPIA SCHEMATU · NLP · WARSZAWA I ONLINE</p>
+      <h1 class="hero__title" id="hero-title">Po trudnych doświadczeniach można wrócić <em>do&nbsp;siebie</em>.</h1>
+      <p class="hero__lead">Pracuję z dorosłymi, którzy chcą zrozumieć, co ich zatrzymuje, i odzyskać poczucie wpływu na własne życie. Spokojnie, we własnym tempie, w relacji opartej na zaufaniu.</p>
+      <div class="hero__actions">
+        <a class="btn" href="#kontakt">Umów pierwszą wizytę</a>
+        <!-- TODO: klientka — numer telefonu (tekst i href="tel:") -->
+        <a class="hero__phone" href="tel:+48600000000">+48 600 000 000</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <!-- TODO: klientka — zdjęcie portretowe do hero (pion 4:5, min. 1200×1500 px). Wgrać do img/ i odkomentować <img> poniżej. -->
+      <div class="portrait portrait--hero">
+        <!-- <img src="img/portret-hero.jpg" alt="Anna Kowalska, psychoterapeutka, portret" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async"> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== O mnie ===== -->
+  <section id="o-mnie" class="wrap g2 sec--bottom" aria-labelledby="o-mnie-title">
+    <div>
+      <p class="eyebrow">O MNIE</p>
+      <h2 class="h2 about__title" id="o-mnie-title">Wierzę, że zmiana zaczyna się od bycia zrozumianym.</h2>
+      <!-- TODO: klientka — zdjęcie w gabinecie (kwadrat 1:1, min. 800×800 px). Wgrać do img/ i odkomentować <img> poniżej. -->
+      <div class="portrait portrait--about">
+        <!-- <img src="img/portret-o-mnie.jpg" alt="Anna Kowalska w gabinecie" width="800" height="800" loading="lazy" decoding="async"> -->
+      </div>
+    </div>
+    <div class="about__body">
+      <p>Jestem psychoterapeutką. Pracuję w nurcie terapii schematu, korzystając też z narzędzi NLP. Szczególnie bliska jest mi praca z osobami, które doświadczyły traumy i chcą odbudować poczucie bezpieczeństwa oraz sprawczości.</p>
+      <p>Najważniejsza jest dla mnie relacja. To w niej, krok po kroku, przyglądamy się wzorcom, które kiedyś pomagały przetrwać, a dziś już nie służą.</p>
+      <div class="edu">
+        <h3 class="eyebrow" id="edu-title">WYKSZTAŁCENIE I SZKOLENIA</h3>
+        <dl class="edu__list" aria-labelledby="edu-title">
+          <!-- TODO: klientka — rok i nazwa szkolenia (1/4) -->
+          <dt>2022</dt>
+          <dd>Certyfikowane szkolenie z terapii schematu — placeholder: nazwa ośrodka</dd>
+          <!-- TODO: klientka — rok i nazwa szkolenia (2/4) -->
+          <dt>2020</dt>
+          <dd>Praktyk i Master NLP — placeholder: nazwa szkoły</dd>
+          <!-- TODO: klientka — rok i nazwa szkolenia (3/4) -->
+          <dt>2018</dt>
+          <dd>Szkolenie z pracy z traumą — placeholder</dd>
+          <!-- TODO: klientka — rok i nazwa uczelni (4/4) -->
+          <dt>2015</dt>
+          <dd>Studia magisterskie z psychologii — placeholder: uczelnia</dd>
+        </dl>
+        <p class="edu__note">Pracę poddaję regularnej superwizji.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Oferta (pas pełnej szerokości) ===== -->
+  <section id="oferta" class="band band--mint" aria-labelledby="oferta-title">
+    <div class="wrap">
+      <div class="offer__head">
+        <div>
+          <p class="eyebrow">OFERTA</p>
+          <h2 class="h2" id="oferta-title">W czym mogę pomóc</h2>
+        </div>
+        <p class="offer__intro">Spotkania stacjonarne w Warszawie lub online. Preferuję kontakt w gabinecie, ale forma zależy od Pani/Pana sytuacji.</p>
+      </div>
+      <ul class="offer">
+        <li class="card">
+          <h3 class="card__title">Terapia schematu</h3>
+          <p class="card__text">Długofalowa praca nad wzorcami myślenia i reagowania, które powstały wcześnie i dziś utrudniają relacje, pracę lub spokój.</p>
+        </li>
+        <li class="card">
+          <h3 class="card__title">Praca z traumą</h3>
+          <p class="card__text">Odbudowa poczucia bezpieczeństwa po trudnych doświadczeniach, w tempie, które Pani/Pan wyznacza.</p>
+        </li>
+        <li class="card">
+          <h3 class="card__title">NLP</h3>
+          <p class="card__text">Konkretne narzędzia do pracy z emocjami, nawykami i komunikacją, przydatne między sesjami.</p>
+        </li>
+        <li class="card card--accent">
+          <h3 class="card__title">Konsultacja</h3>
+          <p class="card__text">Jedno lub kilka spotkań, by nazwać trudność i wspólnie zdecydować, jaka forma pomocy będzie najlepsza.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Pierwsza wizyta ===== -->
+  <section id="wizyta" class="wrap g2 sec" aria-labelledby="wizyta-title">
+    <div>
+      <p class="eyebrow">PIERWSZA WIZYTA</p>
+      <h2 class="h2" id="wizyta-title">Jak wygląda pierwsze spotkanie</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__num" aria-hidden="true">1</span>
+        <div>
+          <h3 class="step__title">Kontakt</h3>
+          <p class="step__text">Telefon lub e-mail. Ustalamy termin i formę spotkania. Odpowiadam w ciągu dwóch dni roboczych.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step__num" aria-hidden="true">2</span>
+        <div>
+          <h3 class="step__title">Rozmowa</h3>
+          <p class="step__text">Pierwsze spotkanie służy poznaniu się. Opowiada Pani/Pan tyle, ile chce. Ja pytam o to, co pomoże mi zrozumieć sytuację.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step__num" aria-hidden="true">3</span>
+        <div>
+          <h3 class="step__title">Decyzja</h3>
+          <p class="step__text">Po 1–3 konsultacjach wspólnie ustalamy cel i zasady współpracy. Można też zdecydować, że to nie ten moment — to w porządku.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===== Cennik ===== -->
+  <section id="cennik" class="wrap g2 sec--bottom" aria-labelledby="cennik-title">
+    <div>
+      <p class="eyebrow">CENNIK</p>
+      <h2 class="h2 pricing__title" id="cennik-title">Przejrzyste zasady</h2>
+      <p class="pricing__note">Płatność gotówką, kartą lub przelewem po sesji. Odwołanie wizyty do 24 godzin wcześniej jest bezpłatne.</p>
+    </div>
+    <ul class="prices">
+      <li class="price">
+        <div>
+          <div class="price__name">Konsultacja wstępna</div>
+          <div class="price__meta">50 min</div>
+        </div>
+        <!-- TODO: klientka — cena konsultacji wstępnej (zaktualizować też w JSON-LD w <head>) -->
+        <div class="price__amount">200 zł</div>
+      </li>
+      <li class="price">
+        <div>
+          <div class="price__name">Sesja stacjonarna</div>
+          <div class="price__meta">50 min · Warszawa</div>
+        </div>
+        <!-- TODO: klientka — cena sesji stacjonarnej (zaktualizować też w JSON-LD w <head>) -->
+        <div class="price__amount">220 zł</div>
+      </li>
+      <li class="price">
+        <div>
+          <div class="price__name">Sesja online</div>
+          <div class="price__meta">50 min</div>
+        </div>
+        <!-- TODO: klientka — cena sesji online (zaktualizować też w JSON-LD w <head>) -->
+        <div class="price__amount">200 zł</div>
+      </li>
+    </ul>
+  </section>
+
+  <!--
+    ===== Opinie =====
+    Sekcja UKRYTA CELOWO (atrybut hidden). Kodeksy etyczne psychoterapeutów są sceptyczne
+    wobec publikowania opinii pacjentów. Jeśli klientka ma pisemne zgody i chce pokazać
+    opinie, wystarczy usunąć atrybut hidden z <section> poniżej (i podmienić treści).
+  -->
+  <section id="opinie" class="wrap sec--bottom" aria-labelledby="opinie-title" hidden>
+    <h2 class="eyebrow reviews__label" id="opinie-title">OPINIE</h2>
+    <div class="reviews">
+      <!-- TODO: klientka — treść i podpis opinii (1/3) -->
+      <figure class="review">
+        <blockquote>„Placeholder opinii — dwa, trzy zdania o tym, co zmieniło się dzięki terapii.”</blockquote>
+        <figcaption>— M., 34 lata</figcaption>
+      </figure>
+      <!-- TODO: klientka — treść i podpis opinii (2/3) -->
+      <figure class="review">
+        <blockquote>„Placeholder opinii — o atmosferze spotkań i poczuciu bezpieczeństwa.”</blockquote>
+        <figcaption>— K., 41 lat</figcaption>
+      </figure>
+      <!-- TODO: klientka — treść i podpis opinii (3/3) -->
+      <figure class="review">
+        <blockquote>„Placeholder opinii — o konkretnych narzędziach, które zostały na dłużej.”</blockquote>
+        <figcaption>— A., 29 lat</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Kontakt (pas pełnej szerokości) ===== -->
+  <section id="kontakt" class="band band--teal" aria-labelledby="kontakt-title">
+    <div class="wrap g2">
+      <div>
+        <p class="eyebrow eyebrow--on-teal">KONTAKT I ZAPIS</p>
+        <h2 class="h2 contact__title" id="kontakt-title">Pierwszy krok to&nbsp;wiadomość.</h2>
+        <p class="contact__intro">Proszę napisać lub zadzwonić. Jeśli nie odbiorę, oddzwonię najpóźniej następnego dnia roboczego.</p>
+      </div>
+      <address class="contact__list">
+        <div>
+          <div class="contact__label">Telefon</div>
+          <!-- TODO: klientka — numer telefonu (tekst i href="tel:") -->
+          <a class="contact__link" href="tel:+48600000000">+48 600 000 000</a>
+        </div>
+        <div>
+          <div class="contact__label">E-mail</div>
+          <!-- TODO: klientka — adres e-mail (tekst i href="mailto:") -->
+          <a class="contact__link contact__link--mail" href="mailto:kontakt@example.pl">kontakt@example.pl</a>
+        </div>
+        <div>
+          <div class="contact__label">Gabinet</div>
+          <!-- TODO: klientka — adres gabinetu -->
+          <div class="contact__address">ul. Przykładowa 12/3, Warszawa<br>Godziny ustalane indywidualnie</div>
+        </div>
+      </address>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <!-- TODO: klientka — imię i nazwisko w stopce -->
+  <span>© 2026 Anna Kowalska · Psychoterapia</span>
+</footer>
+
+</body>
+</html>

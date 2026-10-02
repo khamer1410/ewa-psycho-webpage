@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: klientka — podmienić example.pl na prawdziwą domenę -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.pl/</loc>
+  </url>
+</urlset>
