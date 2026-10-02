@@ -51,6 +51,7 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 - [ ] Zdjęcia: 2 portrety (opis poniżej).
 - [ ] Opinie: 3 cytaty, tylko jeśli sekcja ma być widoczna (opis poniżej).
 - [ ] Domena: zamień `https://example.pl/` na prawdziwy adres w `<link rel="canonical">`, `og:url`, `og:image` i JSON-LD (`"url"`).
+- [ ] Sekcja „Rozmowa z człowiekiem” (między Ofertą a Pierwszą wizytą): akceptacja treści, w tym tonu i tego, czy nazywać AI wprost.
 - [ ] Obrazek do udostępniania (`og-image.png`, 1200×630 px): pojawia się przy wklejaniu linku na Facebooku czy w komunikatorach. Plik trzeba przygotować i wrzucić do głównego folderu; na razie go nie ma.
 
 **`robots.txt`**

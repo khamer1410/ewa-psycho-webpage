@@ -407,11 +407,30 @@ a:hover { color: var(--teal); }
 }
 
 /* ==========================================================================
+   Rozmowa z człowiekiem (#dlaczego) — komponent kroków bez numerów
+   ========================================================================== */
+.why__title { margin-bottom: 16px; }
+
+.steps--plain .step {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.why__outro {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
    Cennik
    ========================================================================== */
 .pricing__title { margin-bottom: 16px; }
 
-.pricing__note {
+.pricing__note,
+.why__note {
   font-size: 16px;
   line-height: 1.55;
   color: var(--muted);
