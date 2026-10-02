@@ -13,7 +13,8 @@ Strona nie używa cookies, analityki ani zewnętrznych skryptów i fontów (wszy
 | `css/fonts.css` | Podpięcie fontów z folderu `fonts/`. |
 | `fonts/` | Fonty Newsreader i Figtree (pliki `.woff2`, z polskimi znakami). |
 | `js/nav.js` | Menu rozwijane na telefonie (przycisk z trzema kreskami). |
-| `img/` | Miejsce na zdjęcia (na razie puste). |
+| `img/` | Zdjęcia (na razie brak) oraz mapa sekcji Gabinety (`mapa-warszawa.webp` i jej parametry w `mapa-warszawa.json`). |
+| `scripts/make-map.py` | Skrypt generujący mapę z OpenStreetMap (uruchamiany ręcznie, tylko przy zmianie adresu). |
 | `favicon.svg` | Ikonka w karcie przeglądarki (litera „A”). |
 | `robots.txt` | Informacja dla wyszukiwarek, że stronę można indeksować. |
 | `sitemap.xml` | Mapa strony dla wyszukiwarek. |
@@ -41,7 +42,10 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 - [ ] Imię i nazwisko: tytuł strony (`<title>`), `og:title`, logo w nawigacji, stopka, JSON-LD (`"name"`).
 - [ ] Telefon: przycisk w sekcji powitalnej i sekcja Kontakt. Zmień zarówno widoczny tekst, jak i `href="tel:+48..."` (bez spacji). Również w JSON-LD (`"telephone"`).
 - [ ] E-mail: sekcja Kontakt (tekst i `href="mailto:..."`) oraz JSON-LD (`"email"`).
-- [ ] Adres gabinetu: sekcja Kontakt oraz JSON-LD (`"streetAddress"`, `"postalCode"` – obecnie `00-000`).
+- [ ] Adresy gabinetów (Wola, ul. Łucka i Mokotów, ul. Sielecka): numer budynku/lokalu i kod pocztowy w kartach sekcji Gabinety (obecnie `00/0` i `00-000`), krótki zapis w sekcji Kontakt oraz JSON-LD (`"location"` → `"streetAddress"`, `"postalCode"`).
+- [ ] Dni i godziny przyjęć: 3 karty w sekcji Gabinety (obecnie przykładowe) oraz JSON-LD (`"openingHoursSpecification"`: `"dayOfWeek"`, `"opens"`, `"closes"`).
+- [ ] Platforma spotkań online (Google Meet, Zoom lub inna): karta „Online” w sekcji Gabinety.
+- [ ] Mapa: po podaniu dokładnych adresów przegenerować ją skryptem i przekleić pozycje pinezek (opis w „Gabinety i mapa”).
 - [ ] Wykształcenie i szkolenia: 4 pozycje (rok i nazwa), sekcja O mnie. Można dodać lub usunąć pozycje, kopiując parę `<dt>rok</dt><dd>opis</dd>`.
 - [ ] Ceny: 3 kwoty w sekcji Cennik oraz te same kwoty w JSON-LD (`"price"`) i `"priceRange"`.
 - [ ] Zdjęcia: 2 portrety (opis poniżej).
@@ -54,6 +58,28 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 
 **`sitemap.xml`**
 - [ ] Zamień `example.pl` na prawdziwą domenę.
+
+## Gabinety i mapa
+
+Sekcja „Gabinety” (między Cennikiem a Kontaktem) pokazuje dwa gabinety w Warszawie i spotkania online: mapę z dwiema pinezkami oraz trzy karty z adresem, dniami i godzinami.
+
+**Co podmienić w `index.html`** (miejsca oznaczone `TODO: klientka`):
+- numery budynków/lokali i kody pocztowe w kartach (`ul. Łucka 00/0, 00-000 Warszawa`, `ul. Sielecka 00/0, 00-000 Warszawa`),
+- dni i godziny w każdej karcie (format: małe litery, zakres z półpauzą, np. `poniedziałek, środa` / `9:00–17:00`),
+- platformę w karcie „Online”,
+- te same dane w JSON-LD w `<head>` (blok `"location"`): adres, współrzędne (`"geo"`) i godziny (`"openingHoursSpecification"`, dni po angielsku, np. `https://schema.org/Monday`, godziny w formacie `09:00`).
+- Linki „Jak dojechać” prowadzą do wyszukiwania ulicy w Google Maps. Po wpisaniu numeru można go dodać do adresu w linku (np. `query=ul.%20%C5%81ucka%2012%2C%20Warszawa`).
+
+**Mapa** to zwykły obrazek (`img/mapa-warszawa.webp`, 1200×900 px) wygenerowany raz z kafelków OpenStreetMap. Strona nie łączy się z żadnym serwerem map, nie ma Google Maps ani cookies. Pinezki to elementy HTML nałożone na obrazek; ich położenie zapisane jest w procentach w atrybucie `style="--x:..%;--y:..%"`. Podpis „© OpenStreetMap contributors” pod mapą jest wymagany licencją OSM i nie wolno go usuwać.
+
+**Jak przegenerować mapę po zmianie adresu:**
+1. Ustal współrzędne budynku (np. na openstreetmap.org: prawy przycisk myszy na budynku → „Pokaż adres”, współrzędne pojawią się w panelu).
+2. W pliku `scripts/make-map.py`, w sekcji „Konfiguracja”, zmień `lat` i `lon` w liście `PINS`.
+3. Uruchom z głównego folderu: `python3 scripts/make-map.py` (wymaga Pythona 3 i biblioteki Pillow: `python3 -m pip install pillow`; na macOS z Homebrew najprościej w środowisku wirtualnym: `python3 -m venv .venv && .venv/bin/pip install pillow && .venv/bin/python scripts/make-map.py`, folder `.venv` usuń po użyciu).
+4. Skrypt nadpisze `img/mapa-warszawa.webp` i `img/mapa-warszawa.json`, a w terminalu wypisze gotowe wartości `--x`/`--y`. Przeklej je do atrybutów `style` obu pinezek (`<a class="pin" ...>`) w `index.html`.
+5. Te same współrzędne wpisz w JSON-LD (`"geo"`).
+
+Jeśli gabinety będą bardzo daleko od siebie, skrypt ostrzeże, że pinezki się nie mieszczą; wtedy zmniejsz `ZOOM` o 1.
 
 ## Jak dodać zdjęcia
 
@@ -79,7 +105,7 @@ Aby ją pokazać: w `index.html` znajdź `<section id="opinie" ... hidden>` i us
 
 ## SEO (widoczność w Google)
 
-Strona ma **podstawowe** ustawienia SEO: tytuł i opis strony, adres kanoniczny, dane do udostępniania (Open Graph), mapę strony oraz dane strukturalne (JSON-LD) z adresem, telefonem i cennikiem. Wszystkie te wartości są teraz przykładowe.
+Strona ma **podstawowe** ustawienia SEO: tytuł i opis strony, adres kanoniczny, dane do udostępniania (Open Graph), mapę strony oraz dane strukturalne (JSON-LD) z adresami obu gabinetów, godzinami, telefonem i cennikiem. Wszystkie te wartości są teraz przykładowe.
 
 Po wpisaniu prawdziwych danych warto dopracować:
 - tytuł i opis strony o frazy lokalne (np. dzielnica Warszawy, „psychoterapeuta Mokotów”, „terapia traumy Warszawa”),

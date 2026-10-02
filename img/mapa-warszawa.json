@@ -1,0 +1,42 @@
+{
+  "source": "© OpenStreetMap contributors (https://www.openstreetmap.org/copyright)",
+  "image": "img/mapa-warszawa.webp",
+  "center": {
+    "lat": 52.218756,
+    "lon": 21.013927
+  },
+  "zoom": 13,
+  "crop_px": [
+    600,
+    450
+  ],
+  "size": [
+    1200,
+    900
+  ],
+  "color": {
+    "saturation": 0.6,
+    "overlay": "#FBF1E1",
+    "alpha": 0.18
+  },
+  "pins": [
+    {
+      "id": "gabinet-1",
+      "label": "1",
+      "name": "Wola, ul. Łucka",
+      "lat": 52.2324,
+      "lon": 20.9886,
+      "x": 25.4,
+      "y": 21.2
+    },
+    {
+      "id": "gabinet-2",
+      "label": "2",
+      "name": "Mokotów, ul. Sielecka",
+      "lat": 52.2052,
+      "lon": 21.0391,
+      "x": 74.4,
+      "y": 78.6
+    }
+  ]
+}

@@ -30,23 +30,58 @@
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/nav.js" defer></script>
 
-<!-- TODO: klientka — wszystkie dane w JSON-LD: imię i nazwisko, telefon, e-mail, adres (ulica, kod pocztowy), ceny, domena -->
+<!-- TODO: klientka — wszystkie dane w JSON-LD: imię i nazwisko, telefon, e-mail, adresy obu gabinetów w "location" (ulica z numerem, kod pocztowy, współrzędne, dni i godziny), ceny, domena -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["MedicalBusiness", "LocalBusiness"],
   "name": "Anna Kowalska — Psychoterapia",
-  "description": "Psychoterapia schematu, NLP i praca z traumą. Gabinet w Warszawie oraz spotkania online.",
+  "description": "Psychoterapia schematu, NLP i praca z traumą. Gabinety w Warszawie (Wola, Mokotów) oraz spotkania online.",
   "url": "https://example.pl/",
   "telephone": "+48600000000",
   "email": "kontakt@example.pl",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "ul. Przykładowa 12/3",
-    "addressLocality": "Warszawa",
-    "postalCode": "00-000",
-    "addressCountry": "PL"
-  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Gabinet Wola",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Łucka 00/0",
+        "addressLocality": "Warszawa",
+        "postalCode": "00-000",
+        "addressCountry": "PL"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 52.2324, "longitude": 20.9886 },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Wednesday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ]
+    },
+    {
+      "@type": "Place",
+      "name": "Gabinet Mokotów",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Sielecka 00/0",
+        "addressLocality": "Warszawa",
+        "postalCode": "00-000",
+        "addressCountry": "PL"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 52.2052, "longitude": 21.0391 },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Thursday"],
+          "opens": "12:00",
+          "closes": "20:00"
+        }
+      ]
+    }
+  ],
   "areaServed": [
     { "@type": "City", "name": "Warszawa" },
     { "@type": "Country", "name": "Polska" }
@@ -96,6 +131,7 @@
       <li><a href="#oferta">Oferta</a></li>
       <li><a href="#wizyta">Pierwsza wizyta</a></li>
       <li><a href="#cennik">Cennik</a></li>
+      <li><a href="#gabinety">Gabinety</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
 
@@ -263,6 +299,65 @@
     </ul>
   </section>
 
+  <!-- ===== Gabinety ===== -->
+  <section id="gabinety" class="wrap sec--bottom" aria-labelledby="gabinety-title">
+    <div class="g2 places__head">
+      <div>
+        <p class="eyebrow">GABINETY</p>
+        <h2 class="h2 places__title" id="gabinety-title">Dwa miejsca w&nbsp;Warszawie. Albo Pani/Pana własny pokój.</h2>
+        <p class="places__intro">Spotykamy się stacjonarnie na Woli lub na Mokotowie, zależnie od dnia tygodnia, albo online. Przy pierwszym kontakcie ustalamy, które miejsce będzie dla Pani/Pana wygodniejsze.</p>
+      </div>
+      <figure class="map">
+        <div class="map__frame">
+          <!-- Statyczna mapa z kafelków OpenStreetMap, generowana skryptem scripts/make-map.py.
+               Pozycje pinezek (--x/--y) wypisuje ten skrypt; po zmianie adresu przegenerować mapę i przekleić wartości. -->
+          <img src="img/mapa-warszawa.webp" alt="Mapa centrum Warszawy z zaznaczonymi gabinetami: 1 na Woli przy ul. Łuckiej, 2 na Mokotowie przy ul. Sieleckiej" width="1200" height="900" loading="lazy" decoding="async">
+          <a class="pin" href="#gabinet-1" style="--x:25.4%;--y:21.2%" aria-label="Gabinet 1, Wola, ul. Łucka">1</a>
+          <a class="pin" href="#gabinet-2" style="--x:74.4%;--y:78.6%" aria-label="Gabinet 2, Mokotów, ul. Sielecka">2</a>
+        </div>
+        <figcaption class="map__credit">Mapa: <a href="https://www.openstreetmap.org/copyright" rel="noopener">© OpenStreetMap contributors</a></figcaption>
+      </figure>
+    </div>
+
+    <ul class="places">
+      <li class="place" id="gabinet-1">
+        <span class="place__num" aria-hidden="true">1</span>
+        <h3 class="place__title">Wola</h3>
+        <!-- TODO: klientka — numer budynku/lokalu i kod pocztowy gabinetu na Woli (zaktualizować też w JSON-LD w <head>) -->
+        <address class="place__address">ul. Łucka 00/0, 00-000 Warszawa</address>
+        <!-- TODO: klientka — dni i godziny przyjęć na Woli (zaktualizować też w JSON-LD w <head>) -->
+        <dl class="place__hours">
+          <dt>poniedziałek, środa</dt>
+          <dd>9:00–17:00</dd>
+        </dl>
+        <a class="place__link" href="https://www.google.com/maps/search/?api=1&amp;query=ul.%20%C5%81ucka%2C%20Warszawa" target="_blank" rel="noopener">Jak dojechać<span class="visually-hidden"> do gabinetu na Woli (otwiera się w nowej karcie)</span></a>
+      </li>
+      <li class="place" id="gabinet-2">
+        <span class="place__num" aria-hidden="true">2</span>
+        <h3 class="place__title">Mokotów</h3>
+        <!-- TODO: klientka — numer budynku/lokalu i kod pocztowy gabinetu na Mokotowie (zaktualizować też w JSON-LD w <head>) -->
+        <address class="place__address">ul. Sielecka 00/0, 00-000 Warszawa</address>
+        <!-- TODO: klientka — dni i godziny przyjęć na Mokotowie (zaktualizować też w JSON-LD w <head>) -->
+        <dl class="place__hours">
+          <dt>wtorek, czwartek</dt>
+          <dd>12:00–20:00</dd>
+        </dl>
+        <a class="place__link" href="https://www.google.com/maps/search/?api=1&amp;query=ul.%20Sielecka%2C%20Warszawa" target="_blank" rel="noopener">Jak dojechać<span class="visually-hidden"> do gabinetu na Mokotowie (otwiera się w nowej karcie)</span></a>
+      </li>
+      <li class="place" id="gabinet-online">
+        <span class="place__num" aria-hidden="true">3</span>
+        <h3 class="place__title">Online</h3>
+        <!-- TODO: klientka — platforma do spotkań online (Google Meet, Zoom lub inna) -->
+        <p class="place__address">Spotkanie na Google Meet lub Zoom. Link przychodzi mailem dzień wcześniej.</p>
+        <!-- TODO: klientka — dni i godziny spotkań online -->
+        <dl class="place__hours">
+          <dt>piątek</dt>
+          <dd>9:00–15:00</dd>
+        </dl>
+      </li>
+    </ul>
+  </section>
+
   <!--
     ===== Opinie =====
     Sekcja UKRYTA CELOWO (atrybut hidden). Kodeksy etyczne psychoterapeutów są sceptyczne
@@ -310,9 +405,9 @@
           <a class="contact__link contact__link--mail" href="mailto:kontakt@example.pl">kontakt@example.pl</a>
         </div>
         <div>
-          <div class="contact__label">Gabinet</div>
-          <!-- TODO: klientka — adres gabinetu -->
-          <div class="contact__address">ul. Przykładowa 12/3, Warszawa<br>Godziny ustalane indywidualnie</div>
+          <div class="contact__label">Gabinety</div>
+          <!-- TODO: klientka — adresy gabinetów (pełne adresy i godziny są w sekcji Gabinety) -->
+          <div class="contact__address">Wola, ul. Łucka · Mokotów, ul. Sielecka<br><a class="contact__more" href="#gabinety">Szczegóły i godziny wyżej</a></div>
         </div>
       </address>
     </div>
