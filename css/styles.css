@@ -835,3 +835,26 @@ a:hover { color: var(--teal); }
 @media (max-width: 760px) {
   .offer--2 { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ===== Strzałki przy linkach =====
+   .link-page  → link do innej strony serwisu (podstrona lub powrót do strony głównej)
+   .link-ext   ↗ link na zewnątrz (mapa, PDF, kodeks PRP)
+   Jedyny wyjątek od zasady „brak animacji”: krótki ruch strzałki na hover/fokus.
+   Strzałka jest ukryta przed czytnikami ekranu (alternatywny tekst „” w content). */
+.link-page::after,
+.link-ext::after {
+  display: inline-block;
+  margin-left: 0.3em;
+  text-decoration: none;
+  transition: transform 150ms ease;
+}
+.link-page::after { content: "\2192\FE0E"; content: "\2192\FE0E" / ""; }
+.link-ext::after  { content: "\2197\FE0E"; content: "\2197\FE0E" / ""; font-size: 0.9em; }
+.link-page:hover::after,
+.link-page:focus-visible::after { transform: translateX(4px); }
+.link-ext:hover::after,
+.link-ext:focus-visible::after { transform: translate(2px, -2px); }
+@media (prefers-reduced-motion: reduce) {
+  .link-page::after,
+  .link-ext::after { transition: none; }
+}
