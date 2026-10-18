@@ -787,12 +787,13 @@ a:hover { color: var(--teal); }
 /* o-mnie.html — galeria miniatur skanów certyfikatów (bez JS: link otwiera skan w nowej karcie) */
 .certs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 .cert__thumb {
   display: block;
-  aspect-ratio: 1 / 1.414;   /* A4 pionowo */
+  aspect-ratio: 1 / 1;       /* kwadrat: mieści skany pionowe i poziome */
+  padding: 12px;
   background: var(--row);
   border-radius: 16px;
   overflow: hidden;
@@ -800,7 +801,7 @@ a:hover { color: var(--teal); }
 .cert__thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .cert figcaption {
   margin-top: 10px;
@@ -809,6 +810,6 @@ a:hover { color: var(--teal); }
   color: var(--muted);
   text-wrap: pretty;
 }
-@media (max-width: 760px) {
+@media (max-width: 1040px) {
   .certs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

@@ -16,7 +16,7 @@ Strona nie używa cookies, analityki ani zewnętrznych skryptów i fontów (wszy
 | `fonts/` | Fonty Newsreader i Figtree (pliki `.woff2`, z polskimi znakami). |
 | `js/nav.js` | Menu rozwijane na telefonie (przycisk z trzema kreskami). |
 | `img/` | Zdjęcia (na razie brak) oraz mapa sekcji Gabinety (`mapa-warszawa.webp` i jej parametry w `mapa-warszawa.json`). |
-| `img/certyfikaty/` | Skany dyplomów i certyfikatów do galerii na podstronie „O mnie” (na razie pusty). |
+| `img/certyfikaty/` | Skany dyplomów i certyfikatów (WebP) do galerii na podstronie „O mnie”. |
 | `scripts/make-map.py` | Skrypt generujący mapę z OpenStreetMap (uruchamiany ręcznie, tylko przy zmianie adresu). |
 | `favicon.svg` | Ikonka w karcie przeglądarki (litera „E”). |
 | `robots.txt` | Informacja dla wyszukiwarek, że stronę można indeksować. |
@@ -45,9 +45,7 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 - [ ] Telefon: czy numer +48 502 733 097 (podany przy BLIK-u) jest też numerem kontaktowym. Występuje w sekcji powitalnej, w Kontakcie, w JSON-LD (`"telephone"`) i na obu podstronach.
 - [ ] Zdanie „Jeśli nie odbiorę, oddzwonię.” w sekcji Kontakt: czy tak ma zostać.
 - [ ] Dokończenie zdania „Uważam, że głównym zadaniem psychoterapii jest…” (w tekście źródłowym urwane; na stronie na razie pominięte, miejsce oznaczone w `o-mnie.html`).
-- [ ] Rok uzyskania certyfikatu terapeutki schematu (nr IND-4366): na stronie głównej (blok „Kwalifikacje”) i w `o-mnie.html` jest na razie „—”.
 - [ ] Certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer w `o-mnie.html` (teraz „w trakcie”) i dodać skan do galerii.
-- [ ] Skany dyplomów i certyfikatów do galerii w `o-mnie.html`, **z zamazanym PESEL-em, adresem i numerami dokumentów**. Pliki WebP do `img/certyfikaty/` pod nazwami: `dyplom-magistra.webp`, `dyplom-doktora.webp`, `certyfikat-nlpt.webp`, `certyfikat-terapia-schematu.webp`. Potem odkomentować `<img>` w każdej miniaturze. Do tego czasu miniatury są pustymi beżowymi polami, a kliknięcie w nie prowadzi do nieistniejącego pliku.
 - [ ] Nazwa szpitala: w tekście źródłowym raz „Wojskowy”, raz „Warszawski Instytut Medyczny”; na stronie wpisano „Wojskowy Instytut Medyczny” (szpital przy ul. Szaserów). Potwierdzić.
 - [ ] Częstotliwość sesji: w opisie pierwszej sesji „nie rzadziej niż raz w tygodniu”, w kontrakcie „ustalana indywidualnie, standardowo raz w tygodniu”. Potwierdzić, która wersja obowiązuje.
 - [ ] Faktura: w cenniku źródłowym jest „faktura lub rachunek imienny”, w kontrakcie tylko rachunek. Na stronie jest tylko rachunek imienny; jeśli wystawiane są też faktury, dopisać.
@@ -76,7 +74,7 @@ Menu u góry jest takie samo na wszystkich stronach i prowadzi do sekcji strony 
 
 Każda podstrona ma własny tytuł, opis i adres kanoniczny w `<head>`. Przy zmianie cen trzeba je poprawić w trzech miejscach: cennik na stronie głównej, JSON-LD w `index.html` i sekcja „Zasady współpracy” w `wspolpraca.html`.
 
-**Galeria certyfikatów** (w `o-mnie.html`): każda miniatura to link do pliku w `img/certyfikaty/`, który otwiera skan w nowej karcie. Aby pokazać skan: wrzucić plik pod nazwą z `href`, a w tej samej miniaturze usunąć `<!--` i `-->` wokół `<img …>`. Jeśli skan jest poziomy, poprawić `width` i `height`.
+**Galeria certyfikatów** (w `o-mnie.html`): każda miniatura to link do pliku w `img/certyfikaty/`, który otwiera skan w nowej karcie. Aby dodać nowy skan (np. certyfikat PRP): **nigdy nie wrzucać PDF-a do repo**, bo repozytorium jest publiczne, a w PDF-ie zakrycia bywają osobną warstwą, którą da się zdjąć. Zamienić PDF na obraz (np. `qlmanage -t -s 1600 -o /tmp plik.pdf`, potem `cwebp -q 80 -metadata none plik.png -o img/certyfikaty/nazwa.webp`), obejrzeć wynik i dodać miniaturę jak pozostałe, z prawdziwymi `width` i `height`.
 
 ## Gabinety i mapa
 
