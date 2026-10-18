@@ -31,6 +31,7 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 
 ## 4. Zasady pisania treści
 
+- Zawód autorki: **„psycholog”** (np. „jestem psychologiem”, „PSYCHOLOG · PSYCHOTERAPEUTKA”), **nigdy „psycholożka”**. Decyzja właściciela. „Psychoterapeutka” zostaje w formie żeńskiej.
 - Po polsku, forma **„Pani/Pan”** (np. „w tempie, które Pani/Pan wyznacza”), nigdy „Ty”. Ton spokojny, konkretny, bez egzaltacji i bez żargonu klinicznego. Przykład wzorcowy: teksty w `#wizyta` i `#oferta`.
 - Zdania krótkie. Jeden akapit = jedna myśl. Eyebrowy wielkimi literami, 2–4 słowa.
 - Nagłówki H2 w stylu „zdanie, nie etykieta”: „Jak wygląda pierwsze spotkanie”, „Pierwszy krok to wiadomość.” Przed ostatnim krótkim wyrazem w H2 daj `&nbsp;`, żeby nie został sam w linii.
