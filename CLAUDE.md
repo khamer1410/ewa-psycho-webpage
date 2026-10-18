@@ -14,14 +14,15 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 ## 2. Czym jest ta strona
 
 - Czysty HTML + CSS + ~2 KB JS (`js/nav.js`, menu mobilne). **Zero build stepu, zero frameworków, zero npm, zero CMS.** Strona ma działać po wrzuceniu plików na dowolny hosting i z `file://`.
-- Jedna strona `index.html`, sekcje z kotwicami. Kolejność: `#top` (hero) → `#o-mnie` → `#oferta` → `#dlaczego` → `#wizyta` → `#cennik` → `#gabinety` → `#opinie` (ukryta) → `#kontakt`.
+- Strona główna `index.html` (one-pager), sekcje z kotwicami. Kolejność: `#top` (hero) → `#o-mnie` → `#jak-pracuje` → `#oferta` → `#dlaczego` → `#wizyta` → `#cennik` → `#gabinety` → `#opinie` (ukryta) → `#kontakt`.
+- Dwie podstrony (decyzja właściciela): `o-mnie.html` (pełne bio, certyfikaty z galerią skanów, szkolenia) i `wspolpraca.html` (pierwsze spotkania, kontrakt, poufność). Menu ich nie zawiera; prowadzą do nich linki w treści i w stopce.
 - Cel biznesowy: telefon lub e-mail. **Brak formularza, rezerwacji, czatu** to świadome decyzje właściciela, nie braki.
 - Ścieżki tylko **względne** (`css/…`, `img/…`), bo strona bywa serwowana z podkatalogu (`/ewa-psycho-webpage/` na github.io).
 
 ## 3. Twarde zakazy
 
 1. **Żadnych zewnętrznych zasobów w runtime.** Brak Google Fonts, Google Maps, analityki, pixeli, czatów, CDN-ów, embedów YouTube. Strona nie wysyła niczego do podmiotów trzecich, dzięki czemu nie potrzebuje banera cookies, a sam fakt wejścia (wrażliwy w kontekście psychoterapii) zostaje u odwiedzającego. Jeśli coś naprawdę wymaga zasobu z zewnątrz, zatrzymaj się i zapytaj właściciela, opisując konsekwencje RODO.
-2. **Projekt graficzny jest zamrożony.** Kolory, typografia, odstępy, promienie, breakpointy (1040 / 760 / 560) i komponenty pochodzą z zatwierdzonego handoffu. Nowe sekcje składaj z istniejących klocków (`.wrap .g2 .sec`, `.eyebrow`, `.h2`, `.steps/.step`, `.card`, `.price`, `.place`, `.band--mint`, `.band--teal`). Nowy komponent tylko po akceptacji właściciela.
+2. **Projekt graficzny jest zamrożony.** Kolory, typografia, odstępy, promienie, breakpointy (760; dawne 1040 i 560 dla 4 kart oferty usunięte przy przejściu na 3 karty) i komponenty pochodzą z zatwierdzonego handoffu. Nowe sekcje składaj z istniejących klocków (`.wrap .g2 .sec`, `.eyebrow`, `.h2`, `.steps/.step`, `.card`, `.price`, `.place`, `.band--mint`, `.band--teal`, `.bullets`, `.text-link`, `.certs` — galeria skanów zatwierdzona przez właściciela). Nowy komponent tylko po akceptacji właściciela.
 3. **Brak animacji, cieni, stanów ładowania.** Tak jest w projekcie.
 4. **Nie wymyślaj faktów o klientce.** Imię, nazwisko, telefon, e-mail, adresy, kwoty, nazwy szkoleń, certyfikaty, lata praktyki, liczby pacjentów: wszystko dostarcza klientka. Jeśli brakuje, zostaw placeholder z komentarzem `<!-- TODO: klientka — co podmienić -->` i dopisz pozycję do checklisty w `README.md`.
 5. **Sekcja `#opinie` zostaje ukryta** (atrybut `hidden`), dopóki właściciel nie zdecyduje inaczej. Nie generuj opinii pacjentów.
@@ -74,7 +75,8 @@ Serwer podglądu: konfiguracja `static` w `.claude/launch.json` (`python3 -m htt
 
 | Co | Gdzie |
 |---|---|
-| Treść strony | `index.html` (komentarze `TODO: klientka` wskazują placeholdery) |
+| Treść strony | `index.html`, `o-mnie.html`, `wspolpraca.html` (komentarze `TODO: klientka` wskazują placeholdery) |
+| Skany certyfikatów | `img/certyfikaty/` (galeria w `o-mnie.html`) |
 | Style, tokeny kolorów | `css/styles.css` (`:root` na górze), `css/fonts.css` |
 | Menu mobilne | `js/nav.js` |
 | Instrukcja i checklista dla klientki | `README.md` |
@@ -89,5 +91,5 @@ Serwer podglądu: konfiguracja `static` w `.claude/launch.json` (`python3 -m htt
 - Brak formularza, brak polityki prywatności, brak cookies.
 - Opinie ukryte.
 - Mapa statyczna, nie Google Maps.
-- Hosting: GitHub Pages z `main`; docelowa domena `ewahamerszmit.pl` (jeszcze niepodpięta; w kodzie placeholder `https://example.pl/`).
+- Hosting: GitHub Pages z `main`; docelowa domena `ewahamerszmit.pl` (jeszcze niekupiona, ale już wpisana w canonical, OG, JSON-LD, robots i sitemap).
 - Wydanie tylko po akceptacji właściciela (punkt 1).

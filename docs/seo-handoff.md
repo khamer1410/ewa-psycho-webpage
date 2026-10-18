@@ -8,7 +8,7 @@ Dokument dla agenta lub osoby, która ma przygotować strategię SEO i rekomenda
 - Nurt: terapia schematu, praca z traumą, narzędzia NLP, konsultacje. Pacjenci dorośli. Spotkania stacjonarne w dwóch gabinetach (Wola, ul. Łucka; Mokotów, ul. Sielecka) oraz online.
 - Cel biznesowy: kontakt telefoniczny lub mailowy. Nie ma formularza, koszyka ani rezerwacji online. To świadoma decyzja.
 - Język: polski. Ton: spokojny, forma „Pani/Pan”, bez obietnic wyleczenia.
-- Imię i nazwisko klientki: Ewa Hamerszmit (w kodzie nadal placeholder „Anna Kowalska”). Planowana domena: `ewahamerszmit.pl` (wolna, jeszcze nie kupiona).
+- Imię i nazwisko klientki: dr Ewa Hamerszmit (już wpisane w kodzie). Planowana domena: `ewahamerszmit.pl` (wolna, jeszcze nie kupiona).
 
 ## 2. Stan techniczny
 

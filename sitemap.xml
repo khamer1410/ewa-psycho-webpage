@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: klientka — podmienić example.pl na prawdziwą domenę -->
+<!-- TODO: klientka — domena ewahamerszmit.pl jeszcze niekupiona -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.pl/</loc>
+    <loc>https://ewahamerszmit.pl/</loc>
+  </url>
+  <url>
+    <loc>https://ewahamerszmit.pl/o-mnie.html</loc>
+  </url>
+  <url>
+    <loc>https://ewahamerszmit.pl/wspolpraca.html</loc>
   </url>
 </urlset>
