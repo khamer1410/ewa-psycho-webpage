@@ -4,21 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- TODO: klientka — imię i nazwisko w tytule strony -->
-<title>Anna Kowalska — psychoterapia schematu i NLP, Warszawa i online</title>
-<meta name="description" content="Psychoterapia schematu, NLP i praca z traumą. Gabinet w Warszawie oraz spotkania online. Spokojnie, we własnym tempie, w relacji opartej na zaufaniu.">
+<title>dr Ewa Hamerszmit — psychoterapeutka w Warszawie i online</title>
+<meta name="description" content="Psychoterapia neurolingwistyczna i terapia schematu dla dorosłych. Dr Ewa Hamerszmit, psycholożka i psychoterapeutka. Gabinety w Warszawie oraz spotkania online.">
 
-<!-- TODO: klientka — prawdziwa domena zamiast https://example.pl/ (canonical, og:url, og:image) -->
-<link rel="canonical" href="https://example.pl/">
+<!-- TODO: klientka — domena ewahamerszmit.pl jeszcze niekupiona (canonical, og:url, og:image, JSON-LD) -->
+<link rel="canonical" href="https://ewahamerszmit.pl/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
-<!-- TODO: klientka — imię i nazwisko w og:title -->
-<meta property="og:title" content="Anna Kowalska — psychoterapia schematu i NLP, Warszawa i online">
-<meta property="og:description" content="Psychoterapia schematu, NLP i praca z traumą. Gabinet w Warszawie oraz spotkania online.">
-<meta property="og:url" content="https://example.pl/">
+<meta property="og:title" content="dr Ewa Hamerszmit — psychoterapeutka w Warszawie i online">
+<meta property="og:description" content="Psychoterapia neurolingwistyczna i terapia schematu dla dorosłych. Gabinety w Warszawie oraz spotkania online.">
+<meta property="og:url" content="https://ewahamerszmit.pl/">
 <!-- TODO: klientka — przygotować og-image.png (1200×630 px) w katalogu głównym; plik jeszcze nie istnieje -->
-<meta property="og:image" content="https://example.pl/og-image.png">
+<meta property="og:image" content="https://ewahamerszmit.pl/og-image.png">
 <meta name="twitter:card" content="summary">
 
 <meta name="theme-color" content="#FBF1E1">
@@ -30,16 +28,58 @@
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/nav.js" defer></script>
 
-<!-- TODO: klientka — wszystkie dane w JSON-LD: imię i nazwisko, telefon, e-mail, adresy obu gabinetów w "location" (ulica z numerem, kod pocztowy, współrzędne, dni i godziny), ceny, domena -->
+<!-- TODO: klientka — w JSON-LD do uzupełnienia: e-mail (domena), adresy obu gabinetów w "location" (ulica z numerem, kod pocztowy, współrzędne, dni i godziny), domena -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["MedicalBusiness", "LocalBusiness"],
-  "name": "Anna Kowalska — Psychoterapia",
-  "description": "Psychoterapia schematu, NLP i praca z traumą. Gabinety w Warszawie (Wola, Mokotów) oraz spotkania online.",
-  "url": "https://example.pl/",
-  "telephone": "+48600000000",
-  "email": "kontakt@example.pl",
+  "@id": "https://ewahamerszmit.pl/#gabinet",
+  "name": "Ewa Hamerszmit — psychoterapia",
+  "description": "Psychoterapia neurolingwistyczna i terapia schematu dla dorosłych. Gabinety w Warszawie (Wola, Mokotów) oraz spotkania online.",
+  "url": "https://ewahamerszmit.pl/",
+  "telephone": "+48502733097",
+  "email": "kontakt@ewahamerszmit.pl",
+  "founder": { "@id": "https://ewahamerszmit.pl/#ewa-hamerszmit" },
+  "employee": {
+    "@type": "Person",
+    "@id": "https://ewahamerszmit.pl/#ewa-hamerszmit",
+    "name": "Ewa Hamerszmit",
+    "honorificPrefix": "dr",
+    "jobTitle": "Psycholożka, psychoterapeutka",
+    "url": "https://ewahamerszmit.pl/o-mnie.html",
+    "telephone": "+48502733097",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Uniwersytet Warszawski" },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certyfikat psychoterapeuty neurolingwistycznego",
+        "credentialCategory": "certyfikat",
+        "identifier": "22/2023"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certyfikat terapeutki schematu",
+        "credentialCategory": "certyfikat",
+        "identifier": "IND-4366"
+      }
+    ],
+    "memberOf": [
+      { "@type": "Organization", "name": "Polskie Stowarzyszenie Neurolingwistycznej Psychoterapii" },
+      { "@type": "Organization", "name": "International Society of Schema Therapy" }
+    ],
+    "knowsAbout": [
+      "Psychoterapia neurolingwistyczna",
+      "Terapia schematu",
+      "Zaburzenia lękowe",
+      "Depresja",
+      "Zaburzenia potraumatyczne",
+      "Zaburzenia psychosomatyczne",
+      "Zaburzenia osobowości",
+      "ADHD u dorosłych",
+      "Niepłodność",
+      "Kryzysy życiowe"
+    ]
+  },
   "location": [
     {
       "@type": "Place",
@@ -86,31 +126,39 @@
     { "@type": "City", "name": "Warszawa" },
     { "@type": "Country", "name": "Polska" }
   ],
-  "knowsAbout": ["Terapia schematu", "NLP", "Praca z traumą"],
-  "priceRange": "200–220 zł",
+  "knowsAbout": [
+    "Psychoterapia neurolingwistyczna",
+    "Terapia schematu",
+    "Wsparcie psychologiczne",
+    "Zaburzenia lękowe",
+    "Depresja",
+    "Zaburzenia potraumatyczne",
+    "Zaburzenia psychosomatyczne"
+  ],
+  "priceRange": "230–250 zł",
   "currenciesAccepted": "PLN",
-  "paymentAccepted": "Gotówka, karta, przelew",
+  "paymentAccepted": "Gotówka, BLIK, przelew",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Cennik",
     "itemListElement": [
       {
         "@type": "Offer",
-        "price": "200",
+        "price": "250",
         "priceCurrency": "PLN",
-        "itemOffered": { "@type": "Service", "name": "Konsultacja wstępna", "description": "50 min" }
+        "itemOffered": { "@type": "Service", "name": "Sesja konsultacyjna", "description": "55 min; obejmuje ewentualne opracowanie kwestionariuszy" }
       },
       {
         "@type": "Offer",
-        "price": "220",
+        "price": "230",
         "priceCurrency": "PLN",
-        "itemOffered": { "@type": "Service", "name": "Sesja stacjonarna", "description": "50 min, Warszawa" }
+        "itemOffered": { "@type": "Service", "name": "Sesja psychoterapeutyczna", "description": "55 min; stacjonarnie w Warszawie lub online" }
       },
       {
         "@type": "Offer",
-        "price": "200",
+        "price": "250",
         "priceCurrency": "PLN",
-        "itemOffered": { "@type": "Service", "name": "Sesja online", "description": "50 min" }
+        "itemOffered": { "@type": "Service", "name": "Wsparcie psychologiczne", "description": "55 min" }
       }
     ]
   }
@@ -123,8 +171,7 @@
 
 <header>
   <nav class="nav wrap" id="nawigacja" aria-label="Główna nawigacja">
-    <!-- TODO: klientka — imię i nazwisko (logo tekstowe) -->
-    <a class="nav__logo" href="#top">Anna Kowalska</a>
+    <a class="nav__logo" href="#top">Ewa Hamerszmit</a>
 
     <ul class="nav__links" id="menu">
       <li><a href="#o-mnie">O mnie</a></li>
@@ -151,55 +198,86 @@
   <!-- ===== Hero ===== -->
   <section id="top" class="wrap g2 hero sec" aria-labelledby="hero-title">
     <div>
-      <p class="eyebrow eyebrow--hero">PSYCHOTERAPIA SCHEMATU · NLP · WARSZAWA I ONLINE</p>
+      <p class="eyebrow eyebrow--hero">DR EWA HAMERSZMIT · PSYCHOTERAPEUTKA · WARSZAWA I ONLINE</p>
       <h1 class="hero__title" id="hero-title">Po trudnych doświadczeniach można wrócić <em>do&nbsp;siebie</em>.</h1>
-      <p class="hero__lead">Pracuję z dorosłymi, którzy chcą zrozumieć, co ich zatrzymuje, i odzyskać poczucie wpływu na własne życie. Spokojnie, we własnym tempie, w relacji opartej na zaufaniu.</p>
+      <p class="hero__lead">Pracuję z dorosłymi, którzy chcą zrozumieć, co ich zatrzymuje, i poczuć zmianę, a nie tylko o niej myśleć. Razem tworzymy mapę Pani/Pana wzorców, w relacji bez oceniania i we własnym tempie.</p>
       <div class="hero__actions">
         <a class="btn" href="#kontakt">Umów pierwszą wizytę</a>
-        <!-- TODO: klientka — numer telefonu (tekst i href="tel:") -->
-        <a class="hero__phone" href="tel:+48600000000">+48 600 000 000</a>
+        <!-- TODO: klientka — potwierdzić, że numer BLIK to też numer kontaktowy -->
+        <a class="hero__phone" href="tel:+48502733097">+48 502 733 097</a>
       </div>
     </div>
     <div class="hero__media">
       <!-- TODO: klientka — zdjęcie portretowe do hero (pion 4:5, min. 1200×1500 px). Wgrać do img/ i odkomentować <img> poniżej. -->
       <div class="portrait portrait--hero">
-        <!-- <img src="img/portret-hero.jpg" alt="Anna Kowalska, psychoterapeutka, portret" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async"> -->
+        <!-- <img src="img/portret-hero.jpg" alt="Ewa Hamerszmit, psychoterapeutka, portret" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async"> -->
       </div>
     </div>
   </section>
 
-  <!-- ===== O mnie ===== -->
+  <!-- ===== O mnie (skrót; pełna wersja w o-mnie.html) ===== -->
   <section id="o-mnie" class="wrap g2 sec--bottom" aria-labelledby="o-mnie-title">
     <div>
       <p class="eyebrow">O MNIE</p>
       <h2 class="h2 about__title" id="o-mnie-title">Wierzę, że zmiana zaczyna się od bycia zrozumianym.</h2>
       <!-- TODO: klientka — zdjęcie w gabinecie (kwadrat 1:1, min. 800×800 px). Wgrać do img/ i odkomentować <img> poniżej. -->
       <div class="portrait portrait--about">
-        <!-- <img src="img/portret-o-mnie.jpg" alt="Anna Kowalska w gabinecie" width="800" height="800" loading="lazy" decoding="async"> -->
+        <!-- <img src="img/portret-o-mnie.jpg" alt="Ewa Hamerszmit w gabinecie" width="800" height="800" loading="lazy" decoding="async"> -->
       </div>
     </div>
     <div class="about__body">
-      <p>Jestem psychoterapeutką. Pracuję w nurcie terapii schematu, korzystając też z narzędzi NLP. Szczególnie bliska jest mi praca z osobami, które doświadczyły traumy i chcą odbudować poczucie bezpieczeństwa oraz sprawczości.</p>
-      <p>Najważniejsza jest dla mnie relacja. To w niej, krok po kroku, przyglądamy się wzorcom, które kiedyś pomagały przetrwać, a dziś już nie służą.</p>
+      <p>Jestem psycholożką i psychoterapeutką, doktorem nauk społecznych Uniwersytetu Warszawskiego. Mam certyfikaty w psychoterapii neurolingwistycznej i w terapii schematu.</p>
+      <p>Od 2014 roku przyjmuję w gabinecie prywatnym. Przez 3 lata pracowałam też w Klinice Psychiatrii i Stresu Bojowego Wojskowego Instytutu Medycznego w Warszawie, z pacjentami oddziału całodobowego i dziennego.</p>
       <div class="edu">
-        <h3 class="eyebrow" id="edu-title">WYKSZTAŁCENIE I SZKOLENIA</h3>
+        <h3 class="eyebrow" id="edu-title">KWALIFIKACJE</h3>
         <dl class="edu__list" aria-labelledby="edu-title">
-          <!-- TODO: klientka — rok i nazwa szkolenia (1/4) -->
-          <dt>2022</dt>
-          <dd>Certyfikowane szkolenie z terapii schematu — placeholder: nazwa ośrodka</dd>
-          <!-- TODO: klientka — rok i nazwa szkolenia (2/4) -->
-          <dt>2020</dt>
-          <dd>Praktyk i Master NLP — placeholder: nazwa szkoły</dd>
-          <!-- TODO: klientka — rok i nazwa szkolenia (3/4) -->
-          <dt>2018</dt>
-          <dd>Szkolenie z pracy z traumą — placeholder</dd>
-          <!-- TODO: klientka — rok i nazwa uczelni (4/4) -->
-          <dt>2015</dt>
-          <dd>Studia magisterskie z psychologii — placeholder: uczelnia</dd>
+          <dt>2011</dt>
+          <dd>Magister psychologii, Uniwersytet Warszawski</dd>
+          <dt>2017</dt>
+          <dd>Doktor nauk społecznych, Uniwersytet Warszawski</dd>
+          <dt>2023</dt>
+          <dd>Certyfikat psychoterapeuty neurolingwistycznego (nr 22/2023)</dd>
+          <!-- TODO: klientka — rok uzyskania certyfikatu terapeutki schematu (wpisać zamiast „—”, także w o-mnie.html) -->
+          <dt>—</dt>
+          <dd>Certyfikat terapeutki schematu (nr IND-4366)</dd>
+          <dt>2026–2030</dt>
+          <dd>Członkini Zarządu Polskiego Stowarzyszenia Neurolingwistycznej Psychoterapii</dd>
         </dl>
         <p class="edu__note">Pracę poddaję regularnej superwizji.</p>
+        <a class="text-link" href="o-mnie.html">Pełne wykształcenie, szkolenia i certyfikaty</a>
       </div>
     </div>
+  </section>
+
+  <!-- ===== Jak pracuję ===== -->
+  <section id="jak-pracuje" class="wrap g2 sec--bottom" aria-labelledby="jak-pracuje-title">
+    <div>
+      <p class="eyebrow">JAK PRACUJĘ</p>
+      <h2 class="h2 why__title" id="jak-pracuje-title">Połączenie głowy i&nbsp;serca.</h2>
+      <p class="why__note">Lubię rozumieć, z czego wynikają trudności, i dzielę się tym rozumieniem, bo zastanawiamy się wspólnie. Jednocześnie jestem uważna i dostrojona do potrzeb osoby, która do mnie przychodzi.</p>
+    </div>
+    <ul class="steps steps--plain">
+      <li class="step">
+        <h3 class="step__title">Uważność i zaciekawienie</h3>
+        <p class="step__text">W pracy opieram się przede wszystkim na szczerym zaciekawieniu drugim człowiekiem. Słucham uważnie i dopytuję, żeby dobrze zrozumieć Pani/Pana historię.</p>
+      </li>
+      <li class="step">
+        <h3 class="step__title">Akceptacja bez ocen</h3>
+        <p class="step__text">Bliska jest mi postawa rogeriańska: akceptuję osobę, która do mnie przychodzi, a jednocześnie pokazuję koszty reakcji i zachowań, które są dla niej niekorzystne.</p>
+      </li>
+      <li class="step">
+        <h3 class="step__title">Konceptualizacja</h3>
+        <p class="step__text">Korzystając z terapii schematu, tworzymy rodzaj mentalnej „mapy”. Pomaga ona zobaczyć, jakie schematy i powtarzające się wzorce są aktywne w Pani/Pana życiu, i rozpoznawać znajome reakcje.</p>
+      </li>
+      <li class="step">
+        <h3 class="step__title">Bez gotowych rad</h3>
+        <p class="step__text">Jestem dociekliwa i szczera, ale nie stawiam się w roli eksperta, który wie lepiej. Wierzę, że to Pani/Pan najlepiej wybierze scenariusz dla siebie, gdy ma dostęp do własnych zasobów, a nie działa na automatycznych reakcjach.</p>
+      </li>
+      <li class="step">
+        <h3 class="step__title">Doświadczanie</h3>
+        <p class="step__text">Psychoterapia nie dotyczy tylko „głowy”. Jestem uważna na to, co dzieje się w ciele, bo zmiana to nie tylko zrozumienie, ale też doświadczenie.</p>
+      </li>
+    </ul>
   </section>
 
   <!-- ===== Oferta (pas pełnej szerokości) ===== -->
@@ -210,26 +288,36 @@
           <p class="eyebrow">OFERTA</p>
           <h2 class="h2" id="oferta-title">W czym mogę pomóc</h2>
         </div>
-        <p class="offer__intro">Spotkania stacjonarne w Warszawie lub online. Preferuję kontakt w gabinecie, ale forma zależy od Pani/Pana sytuacji.</p>
+        <p class="offer__intro">Spotkania stacjonarne w Warszawie lub online. Metodę pracy dobieram do osoby, a formę spotkań do Pani/Pana sytuacji.</p>
       </div>
       <ul class="offer">
         <li class="card">
-          <h3 class="card__title">Terapia schematu</h3>
-          <p class="card__text">Długofalowa praca nad wzorcami myślenia i reagowania, które powstały wcześnie i dziś utrudniają relacje, pracę lub spokój.</p>
+          <h3 class="card__title">Psychoterapia</h3>
+          <p class="card__text">Proces, w którym spotykamy się raz w tygodniu, stacjonarnie lub online. Metodę dobieram do osoby; najwięcej czerpię z psychoterapii neurolingwistycznej i terapii schematu.</p>
         </li>
         <li class="card">
-          <h3 class="card__title">Praca z traumą</h3>
-          <p class="card__text">Odbudowa poczucia bezpieczeństwa po trudnych doświadczeniach, w tempie, które Pani/Pan wyznacza.</p>
-        </li>
-        <li class="card">
-          <h3 class="card__title">NLP</h3>
-          <p class="card__text">Konkretne narzędzia do pracy z emocjami, nawykami i komunikacją, przydatne między sesjami.</p>
+          <h3 class="card__title">Wsparcie psychologiczne</h3>
+          <p class="card__text">Jedno lub kilka spotkań w związku z konkretnym wydarzeniem czy kryzysem. Mają pomóc w poradzeniu sobie z trudną sytuacją i nakreślić plan dalszego wsparcia.</p>
         </li>
         <li class="card card--accent">
           <h3 class="card__title">Konsultacja</h3>
-          <p class="card__text">Jedno lub kilka spotkań, by nazwać trudność i wspólnie zdecydować, jaka forma pomocy będzie najlepsza.</p>
+          <p class="card__text">Trzy pierwsze spotkania: poznajemy się, zbieram wywiad, czasem proszę o wypełnienie kwestionariuszy. Na koniec wspólnie decydujemy o dalszej pracy.</p>
         </li>
       </ul>
+
+      <div class="concerns">
+        <h3 class="eyebrow" id="zagadnienia-title">Z CZYM MOŻNA PRZYJŚĆ</h3>
+        <ul class="bullets bullets--2col" aria-labelledby="zagadnienia-title">
+          <li>Niezrozumiałe reakcje z ciała (zaburzenia psychosomatyczne)</li>
+          <li>Starania o dziecko i niepłodność</li>
+          <li>Napady paniki, ciągły niepokój (zaburzenia lękowe, lęk uogólniony)</li>
+          <li>Obniżony nastrój, wahania nastroju (depresja, choroba afektywna dwubiegunowa)</li>
+          <li>Trudności w relacjach i powtarzające się wzorce (zaburzenia osobowości)</li>
+          <li>Trudności z koncentracją i organizacją (ADHD u dorosłych)</li>
+          <li>Skutki trudnych i traumatycznych doświadczeń (zaburzenia potraumatyczne)</li>
+          <li>Kryzysy związane ze zmianami: zmiana pracy, rozwód, strata bliskiej osoby</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -245,7 +333,7 @@
       <ul class="steps steps--plain">
         <li class="step">
           <h3 class="step__title">Relacja, nie odpowiedź.</h3>
-          <p class="step__text">Wzorce, które utrudniają życie, powstały w relacjach i w relacji się zmieniają. W gabinecie liczy się nie tylko to, co Pani/Pan mówi, ale też cisza, ton głosu i to, czego się unika. Tego nie widać w oknie czatu.</p>
+          <p class="step__text">W rozmowie na żywo liczy się nie tylko treść. Ton głosu, pauza, zmiana postawy czy temat, który Pani/Pan omija, często mówią więcej niż słowa. Tego nie widać w oknie czatu.</p>
         </li>
         <li class="step">
           <h3 class="step__title">Ktoś, kto prowadzi proces.</h3>
@@ -268,31 +356,34 @@
   <section id="wizyta" class="wrap g2 sec--bottom" aria-labelledby="wizyta-title">
     <div>
       <p class="eyebrow">PIERWSZA WIZYTA</p>
-      <h2 class="h2" id="wizyta-title">Jak wygląda pierwsze spotkanie</h2>
+      <h2 class="h2" id="wizyta-title">Jak wyglądają pierwsze spotkania</h2>
     </div>
-    <ol class="steps">
-      <li class="step">
-        <span class="step__num" aria-hidden="true">1</span>
-        <div>
-          <h3 class="step__title">Kontakt</h3>
-          <p class="step__text">Telefon lub e-mail. Ustalamy termin i formę spotkania. Odpowiadam w ciągu dwóch dni roboczych.</p>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__num" aria-hidden="true">2</span>
-        <div>
-          <h3 class="step__title">Rozmowa</h3>
-          <p class="step__text">Pierwsze spotkanie służy poznaniu się. Opowiada Pani/Pan tyle, ile chce. Ja pytam o to, co pomoże mi zrozumieć sytuację.</p>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__num" aria-hidden="true">3</span>
-        <div>
-          <h3 class="step__title">Decyzja</h3>
-          <p class="step__text">Po 1–3 konsultacjach wspólnie ustalamy cel i zasady współpracy. Można też zdecydować, że to nie ten moment — to w porządku.</p>
-        </div>
-      </li>
-    </ol>
+    <div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num" aria-hidden="true">1</span>
+          <div>
+            <h3 class="step__title">Poznanie</h3>
+            <p class="step__text">Spotkanie umawiamy telefonicznie lub SMS-em. Na początku przedstawiam siebie i sposób pracy. Omawiamy zasady poufności i jej wyjątki, a także terminy, płatności i odwoływanie spotkań.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">2</span>
+          <div>
+            <h3 class="step__title">Wywiad</h3>
+            <p class="step__text">Opowiada Pani/Pan, co skłoniło do umówienia wizyty, a ja dopytuję. Pytam też o historię rodzinną, na tyle, na ile chce Pani/Pan o niej mówić. Czasem proszę o wypełnienie kwestionariuszy: to wskazówka, nie diagnoza, i zawsze omawiamy wyniki. Jeśli trzeba, proponuję konsultację lekarską.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">3</span>
+          <div>
+            <h3 class="step__title">Decyzja</h3>
+            <p class="step__text">Na trzecim spotkaniu podsumowujemy dotychczasowy kontakt i sprawdzamy, czy obie strony chcą pracować dalej. Jeśli tak, umawiamy się na proces raz w tygodniu, stacjonarnie lub online.</p>
+          </div>
+        </li>
+      </ol>
+      <a class="text-link" href="wspolpraca.html#pierwsze-spotkania">Więcej o pierwszych spotkaniach</a>
+    </div>
   </section>
 
   <!-- ===== Cennik ===== -->
@@ -300,34 +391,34 @@
     <div>
       <p class="eyebrow">CENNIK</p>
       <h2 class="h2 pricing__title" id="cennik-title">Przejrzyste zasady</h2>
-      <p class="pricing__note">Płatność gotówką, kartą lub przelewem po sesji. Odwołanie wizyty do 24 godzin wcześniej jest bezpłatne.</p>
+      <p class="pricing__note">Płatność w dniu sesji gotówką, BLIK-iem na numer telefonu lub przelewem. Na prośbę wystawiam imienny rachunek. Odwołanie później niż dobę przed sesją lub nieobecność oznacza pełną opłatę.</p>
     </div>
-    <ul class="prices">
-      <li class="price">
-        <div>
-          <div class="price__name">Konsultacja wstępna</div>
-          <div class="price__meta">50 min</div>
-        </div>
-        <!-- TODO: klientka — cena konsultacji wstępnej (zaktualizować też w JSON-LD w <head>) -->
-        <div class="price__amount">200 zł</div>
-      </li>
-      <li class="price">
-        <div>
-          <div class="price__name">Sesja stacjonarna</div>
-          <div class="price__meta">50 min · Warszawa</div>
-        </div>
-        <!-- TODO: klientka — cena sesji stacjonarnej (zaktualizować też w JSON-LD w <head>) -->
-        <div class="price__amount">220 zł</div>
-      </li>
-      <li class="price">
-        <div>
-          <div class="price__name">Sesja online</div>
-          <div class="price__meta">50 min</div>
-        </div>
-        <!-- TODO: klientka — cena sesji online (zaktualizować też w JSON-LD w <head>) -->
-        <div class="price__amount">200 zł</div>
-      </li>
-    </ul>
+    <div>
+      <ul class="prices">
+        <li class="price">
+          <div>
+            <div class="price__name">Sesja konsultacyjna</div>
+            <div class="price__meta">55 min · obejmuje ewentualne opracowanie kwestionariuszy</div>
+          </div>
+          <div class="price__amount">250 zł</div>
+        </li>
+        <li class="price">
+          <div>
+            <div class="price__name">Sesja psychoterapeutyczna</div>
+            <div class="price__meta">55 min · stacjonarnie lub online</div>
+          </div>
+          <div class="price__amount">230 zł</div>
+        </li>
+        <li class="price">
+          <div>
+            <div class="price__name">Wsparcie psychologiczne</div>
+            <div class="price__meta">55 min</div>
+          </div>
+          <div class="price__amount">250 zł</div>
+        </li>
+      </ul>
+      <a class="text-link" href="wspolpraca.html#zasady">Zasady współpracy: płatności, odwołania, poufność</a>
+    </div>
   </section>
 
   <!-- ===== Gabinety ===== -->
@@ -422,18 +513,19 @@
       <div>
         <p class="eyebrow eyebrow--on-teal">KONTAKT I ZAPIS</p>
         <h2 class="h2 contact__title" id="kontakt-title">Pierwszy krok to&nbsp;wiadomość.</h2>
-        <p class="contact__intro">Proszę napisać lub zadzwonić. Jeśli nie odbiorę, oddzwonię najpóźniej następnego dnia roboczego.</p>
+        <!-- TODO: klientka — potwierdzić zdanie „Jeśli nie odbiorę, oddzwonię.” -->
+        <p class="contact__intro">Proszę zadzwonić lub wysłać SMS. Jeśli nie odbiorę, oddzwonię.</p>
       </div>
       <address class="contact__list">
         <div>
           <div class="contact__label">Telefon</div>
-          <!-- TODO: klientka — numer telefonu (tekst i href="tel:") -->
-          <a class="contact__link" href="tel:+48600000000">+48 600 000 000</a>
+          <!-- TODO: klientka — potwierdzić, że numer BLIK to też numer kontaktowy -->
+          <a class="contact__link" href="tel:+48502733097">+48 502 733 097</a>
         </div>
         <div>
           <div class="contact__label">E-mail</div>
-          <!-- TODO: klientka — adres e-mail (tekst i href="mailto:") -->
-          <a class="contact__link contact__link--mail" href="mailto:kontakt@example.pl">kontakt@example.pl</a>
+          <!-- TODO: klientka — domena do kupienia; ustawić przekierowanie na skrzynkę Gmail -->
+          <a class="contact__link contact__link--mail" href="mailto:kontakt@ewahamerszmit.pl">kontakt@ewahamerszmit.pl</a>
         </div>
         <div>
           <div class="contact__label">Gabinety</div>
@@ -447,8 +539,11 @@
 </main>
 
 <footer class="footer">
-  <!-- TODO: klientka — imię i nazwisko w stopce -->
-  <span>© 2026 Anna Kowalska · Psychoterapia</span>
+  <span>© 2026 dr Ewa Hamerszmit · Psychoterapia</span>
+  <nav class="footer__links" aria-label="Więcej informacji">
+    <a href="o-mnie.html">O mnie: wykształcenie i certyfikaty</a>
+    <a href="wspolpraca.html">Jak wygląda współpraca</a>
+  </nav>
 </footer>
 
 </body>

@@ -1,8 +1,9 @@
 /* ==========================================================================
    Strona psychoterapeutki — style główne
    Wartości (kolory, rozmiary, odstępy, breakpointy) 1:1 z handoffu projektowego.
-   Breakpointy: 1040px (oferta 2 kolumny), 760px (układ 1-kolumnowy, menu mobilne,
-   karty gabinetów 1 kolumna), 560px (oferta 1 kolumna).
+   Breakpointy: 760px (układ 1-kolumnowy, menu mobilne, oferta i karty gabinetów
+   1 kolumna, lista zagadnień 1 kolumna, galeria certyfikatów 2 kolumny).
+   Wcześniejsze 1040px i 560px (oferta 4→2→1) zniknęły razem z czwartą kartą.
    ========================================================================== */
 
 /* ---------- Tokeny ---------- */
@@ -350,7 +351,7 @@ a:hover { color: var(--teal); }
 
 .offer {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -373,6 +374,34 @@ a:hover { color: var(--teal); }
 }
 .card--accent { background: var(--teal); color: var(--bg); }
 .card--accent .card__text { color: inherit; }
+
+/* Z czym można przyjść: lista pod kartami, w tym samym pasie mięty */
+.concerns { margin-top: 40px; }
+
+/* Lista z minimalnymi kropkami (zagadnienia w Ofercie, wyjątki od tajemnicy na podstronie) */
+.bullets {
+  display: grid;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.bullets li {
+  position: relative;
+  padding-left: 20px;
+}
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: .7em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+.bullets--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 48px; }
+.concerns .bullets { color: var(--on-mint); }
 
 /* ==========================================================================
    Pierwsza wizyta
@@ -667,6 +696,18 @@ a:hover { color: var(--teal); }
 .contact__more { color: inherit; text-decoration: none; }
 .contact__more:hover { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
+/* Link tekstowy do podstron (jak „Jak dojechać” w Gabinetach) */
+.text-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--teal);
+  text-underline-offset: 3px;
+}
+.text-link:hover { color: var(--cta-hover); }
+.edu .text-link { margin-top: 12px; }
+
 /* ==========================================================================
    Stopka
    ========================================================================== */
@@ -681,14 +722,13 @@ a:hover { color: var(--teal); }
   font-size: 13px;
   color: var(--muted);
 }
+.footer__links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.footer__links a { color: inherit; text-underline-offset: 3px; }
+.footer__links a:hover { color: var(--teal); }
 
 /* ==========================================================================
    Responsywność
    ========================================================================== */
-@media (max-width: 1040px) {
-  .offer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
 @media (max-width: 760px) {
   :root { --gutter: 20px; }
 
@@ -710,6 +750,10 @@ a:hover { color: var(--teal); }
   .places__head { margin-bottom: 32px; }
   .places { grid-template-columns: minmax(0, 1fr); }
 
+  /* Oferta: od razu 1 kolumna (bez układu 2+1), zagadnienia w 1 kolumnie */
+  .offer,
+  .bullets--2col { grid-template-columns: minmax(0, 1fr); }
+
   /* Menu mobilne: linki ukryte, przycisk widoczny (o ile JS go odsłonił) */
   .nav__links { display: none; }
   .nav__toggle { display: inline-flex; }
@@ -727,6 +771,44 @@ a:hover { color: var(--teal); }
   .nav.is-open .nav__links a { display: block; padding: 14px 0; }
 }
 
-@media (max-width: 560px) {
-  .offer { grid-template-columns: minmax(0, 1fr); }
+/* ==========================================================================
+   Podstrony: o-mnie.html, wspolpraca.html
+   (na końcu pliku, żeby nadpisać padding .sec z media query)
+   ========================================================================== */
+.page-head { padding-top: 48px; }
+
+.about__body a,
+.step__text a { color: var(--teal); text-underline-offset: 3px; }
+.about__body a:hover,
+.step__text a:hover { color: var(--cta-hover); }
+
+.about__body .bullets { gap: 8px; }
+
+/* o-mnie.html — galeria miniatur skanów certyfikatów (bez JS: link otwiera skan w nowej karcie) */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.cert__thumb {
+  display: block;
+  aspect-ratio: 1 / 1.414;   /* A4 pionowo */
+  background: var(--row);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.cert__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cert figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+@media (max-width: 760px) {
+  .certs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
