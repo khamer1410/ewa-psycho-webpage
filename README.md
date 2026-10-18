@@ -54,7 +54,7 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 - [ ] Dni i godziny przyjęć: 3 karty w sekcji Gabinety (obecnie przykładowe) oraz JSON-LD (`"openingHoursSpecification"`).
 - [ ] Platforma spotkań online (Google Meet, Zoom lub inna): karta „Online” w sekcji Gabinety.
 - [ ] Mapa: po podaniu dokładnych adresów przegenerować ją skryptem i przekleić pozycje pinezek (opis w „Gabinety i mapa”).
-- [ ] Zdjęcia: 2 portrety (opis poniżej); portret 1:1 pojawia się też na podstronie „O mnie”.
+- [ ] Zdjęcia: 2 portrety (opis poniżej); portret pionowy 4:5 (ten z sekcji powitalnej) pojawia się też u góry podstrony „O mnie”.
 - [ ] Opinie: 3 cytaty, tylko jeśli sekcja ma być widoczna (opis poniżej).
 - [ ] Obrazek do udostępniania (`og-image.png`, 1200×630 px): plik trzeba przygotować i wrzucić do głównego folderu; na razie go nie ma.
 
@@ -112,7 +112,7 @@ Format: JPG lub WebP, najlepiej skompresowany do ok. 200–400 KB (np. w squoosh
 1. Wrzuć zdjęcia do folderu `img/` pod nazwami z tabeli. Jeśli używasz innej nazwy lub formatu WebP, zmień ją także w `src="..."`.
 2. W `index.html` znajdź komentarz `<!-- <img src="img/portret-hero.jpg" ...> -->` i usuń znaki `<!--` na początku oraz `-->` na końcu tej linii. To samo zrób dla `portret-o-mnie.jpg`.
 3. Jeśli zdjęcie ma inne wymiary niż w tabeli, popraw atrybuty `width` i `height` na rzeczywiste (zapobiega to „skakaniu” strony podczas ładowania).
-4. Sprawdź opis w atrybucie `alt` (np. „Ewa Hamerszmit, psychoterapeutka, portret”). Zdjęcie do sekcji O mnie odkomentuj także w `o-mnie.html`.
+4. Sprawdź opis w atrybucie `alt` (np. „Ewa Hamerszmit, psychoterapeutka, portret”). W `o-mnie.html` odkomentuj u góry strony to samo zdjęcie co w sekcji powitalnej (`portret-hero.jpg`, pion 4:5).
 
 ## Sekcja Opinie
 

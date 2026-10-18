@@ -95,111 +95,159 @@
 
 <main id="tresc" tabindex="-1">
 
-  <!-- ===== Wykształcenie (nagłówek strony) ===== -->
-  <section class="wrap g2 sec page-head" aria-labelledby="page-title">
+  <!-- ===== Nagłówek strony (jak hero na stronie głównej) ===== -->
+  <section class="wrap g2 hero sec" aria-labelledby="page-title">
     <div>
       <p class="eyebrow eyebrow--hero">PSYCHOLOG · PSYCHOTERAPEUTKA</p>
-      <h1 class="hero__title about__title" id="page-title">Ewa Hamerszmit</h1>
-      <!-- TODO: klientka — zdjęcie (kwadrat 1:1, min. 800×800 px), może być to samo co w sekcji O mnie na stronie głównej. Wgrać do img/ i odkomentować <img> poniżej. -->
-      <div class="portrait portrait--about">
-        <!-- <img src="img/portret-o-mnie.jpg" alt="Ewa Hamerszmit w gabinecie" width="800" height="800" loading="lazy" decoding="async"> -->
+      <h1 class="hero__title" id="page-title">Ewa Hamerszmit</h1>
+      <p class="hero__lead">Jestem psychologiem i psychoterapeutką, doktorem nauk społecznych Uniwersytetu Warszawskiego. Mam certyfikaty w psychoterapii neurolingwistycznej i w terapii schematu, a od 2014 roku przyjmuję w gabinecie prywatnym.</p>
+      <div class="hero__actions">
+        <a class="btn" href="index.html#kontakt">Umów konsultację</a>
+        <!-- TODO: klientka — potwierdzić, że numer BLIK to też numer kontaktowy -->
+        <a class="hero__phone" href="tel:+48502733097">+48 502 733 097</a>
       </div>
     </div>
+    <div class="hero__media">
+      <!-- TODO: klientka — zdjęcie portretowe (pion 4:5, min. 1200×1500 px), może być to samo co w hero strony głównej. Wgrać do img/ i odkomentować <img> poniżej. -->
+      <div class="portrait portrait--hero">
+        <!-- <img src="img/portret-hero.jpg" alt="Ewa Hamerszmit, psychoterapeutka, portret" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async"> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Wykształcenie ===== -->
+  <section id="wyksztalcenie" class="wrap g2 sec--bottom" aria-labelledby="wyksztalcenie-title">
+    <div>
+      <p class="eyebrow">WYKSZTAŁCENIE</p>
+      <h2 class="h2 why__title" id="wyksztalcenie-title">Psychologia, doktorat i&nbsp;dwa nurty terapii.</h2>
+      <p class="why__note">Studia i doktorat na Uniwersytecie Warszawskim, potem czteroletnie szkolenie psychoterapeutyczne i certyfikaty w dwóch nurtach.</p>
+    </div>
     <div class="about__body">
-      <p>Nazywam się Ewa Hamerszmit i jestem psychologiem oraz psychoterapeutką.</p>
-      <p>Ukończyłam studia psychologiczne na Uniwersytecie Warszawskim w ramach Międzywydziałowych Indywidualnych Studiów Humanistycznych i w 2011 roku otrzymałam dyplom magistra psychologii. Następnie ukończyłam studia doktoranckie i w 2017 roku, po udanej obronie rozprawy doktorskiej pt. <cite>Przeglądając się w cudzych oczach – specyfika postrzegania i doświadczania ciała przez osoby z różnym nasileniem i typem narcyzmu</cite> (<a href="https://psych.strony.uw.edu.pl/wp-content/uploads/sites/98/2017/01/Streszczenie-27.pdf" rel="noopener">streszczenie rozprawy, PDF</a>), uzyskałam tytuł doktora nauk społecznych.</p>
-      <p>Ukończyłam 4-letnie szkolenie w Polskim Instytucie NLP, obejmujące podstawowe i zaawansowane metody pracy w psychoterapii neurolingwistycznej, a także wiedzę o diagnozie i mechanizmach powstawania zaburzeń psychicznych oraz umiejętności budowania dobrej relacji z Klientką lub Klientem. Odbyłam wymaganą terapię własną (ponad dwuletnią) oraz prowadziłam psychoterapię, pozostając pod stałą superwizją moich nauczycieli. Odbyłam również obowiązkowe praktyki w Szpitalu Wolskim oraz w Wojskowym Instytucie Medycznym. Domknięciem tego etapu procesu szkoleniowego było przystąpienie do egzaminu w Polskim Stowarzyszeniu Neurolingwistycznej Psychoterapii, po którego zdaniu uzyskałam uprawnienia psychoterapeutki.</p>
+      <p>Ukończyłam studia psychologiczne na Uniwersytecie Warszawskim w ramach Międzywydziałowych Indywidualnych Studiów Humanistycznych i w 2011 roku otrzymałam dyplom magistra psychologii.</p>
+      <p>Następnie ukończyłam studia doktoranckie i w 2017 roku, po udanej obronie rozprawy doktorskiej pt. <cite>Przeglądając się w cudzych oczach – specyfika postrzegania i doświadczania ciała przez osoby z różnym nasileniem i typem narcyzmu</cite> (<a href="https://psych.strony.uw.edu.pl/wp-content/uploads/sites/98/2017/01/Streszczenie-27.pdf" rel="noopener">streszczenie rozprawy, PDF</a>), uzyskałam tytuł doktora nauk społecznych.</p>
+      <p>Ukończyłam 4-letnie szkolenie w Polskim Instytucie NLP, obejmujące podstawowe i zaawansowane metody pracy w psychoterapii neurolingwistycznej, a także wiedzę o diagnozie i mechanizmach powstawania zaburzeń psychicznych oraz umiejętności budowania dobrej relacji z Klientką lub Klientem.</p>
+      <p>Odbyłam wymaganą terapię własną (ponad dwuletnią) oraz prowadziłam psychoterapię, pozostając pod stałą superwizją moich nauczycieli. Odbyłam również obowiązkowe praktyki w Szpitalu Wolskim oraz w Wojskowym Instytucie Medycznym. Domknięciem tego etapu procesu szkoleniowego było przystąpienie do egzaminu w Polskim Stowarzyszeniu Neurolingwistycznej Psychoterapii, po którego zdaniu uzyskałam uprawnienia psychoterapeutki.</p>
       <p>Posiadam certyfikat psychoterapeuty neurolingwistycznego (nr 22/2023) oraz certyfikat terapeutki schematu (nr IND-4366). Obecnie oczekuję również na certyfikat wydawany przez Polską Radę Psychoterapii, która jest niezależnym stowarzyszeniem potwierdzającym kompetencje psychoterapeutów szkolących się w różnych nurtach i w różnym czasie w Polsce.</p>
     </div>
   </section>
 
-  <!-- ===== Doświadczenie i sposób pracy ===== -->
-  <section class="wrap g2 sec--bottom" aria-labelledby="praktyka-title">
+  <!-- ===== Doświadczenie ===== -->
+  <section id="doswiadczenie" class="wrap g2 sec--bottom" aria-labelledby="praktyka-title">
     <div>
       <p class="eyebrow">DOŚWIADCZENIE</p>
-      <h2 class="h2" id="praktyka-title">Praca w gabinecie i&nbsp;w&nbsp;klinice.</h2>
+      <h2 class="h2 why__title" id="praktyka-title">Praca w gabinecie i&nbsp;w&nbsp;klinice.</h2>
+      <p class="why__note">Doświadczenie zbierałam w gabinecie prywatnym i w klinice psychiatrii, z pacjentami oddziału całodobowego i dziennego.</p>
     </div>
     <div class="about__body">
       <!-- TODO: klientka — potwierdzić nazwę: w tekście źródłowym raz „Wojskowy”, raz „Warszawski Instytut Medyczny” (szpital przy ul. Szaserów to Wojskowy Instytut Medyczny) -->
-      <p>Od 2014 roku pracuję z klientami w gabinecie prywatnym. Mam także doświadczenie pracy klinicznej: przez 3 lata pracowałam w Klinice Psychiatrii i Stresu Bojowego Wojskowego Instytutu Medycznego (szpital przy ul. Szaserów). Miałam tam możliwość spotkania się zarówno z pacjentami hospitalizowanymi na oddziale całodobowym, jak i prowadzenia terapii (grupowej i indywidualnej) na oddziale dziennym. Przyjmowałam także pacjentów w ramach Poradni Zdrowia Psychicznego oraz współtworzyłam zespół psychotraumatologiczny.</p>
+      <p>Od 2014 roku pracuję z klientami w gabinecie prywatnym. Mam także doświadczenie pracy klinicznej: przez 3 lata pracowałam w Klinice Psychiatrii i Stresu Bojowego Wojskowego Instytutu Medycznego (szpital przy ul. Szaserów).</p>
+      <p>Miałam tam możliwość spotkania się zarówno z pacjentami hospitalizowanymi na oddziale całodobowym, jak i prowadzenia terapii (grupowej i indywidualnej) na oddziale dziennym. Przyjmowałam także pacjentów w ramach Poradni Zdrowia Psychicznego oraz współtworzyłam zespół psychotraumatologiczny.</p>
+    </div>
+  </section>
+
+  <!-- ===== Jak pracuję ===== -->
+  <section id="jak-pracuje" class="wrap g2 sec--bottom" aria-labelledby="jak-pracuje-title">
+    <div>
+      <p class="eyebrow">JAK PRACUJĘ</p>
+      <h2 class="h2 why__title" id="jak-pracuje-title">Dobieram metodę do&nbsp;osoby.</h2>
+      <p class="why__note">Opieram się na zaciekawieniu drugim człowiekiem i na narzędziach z różnych podejść. Uwzględniam też to, co dzieje się w ciele.</p>
+    </div>
+    <div class="about__body">
       <p>Pracuję, wykorzystując przede wszystkim szczere zaciekawienie drugim człowiekiem oraz narzędzia z różnych podejść terapeutycznych. Zawsze staram się dobrać metodę terapii tak, by była najkorzystniejsza dla Klientki lub Klienta. Słucham również wrażeń oraz preferencji i jestem otwarta na zmianę metody, jeśli Klientka lub Klient jej potrzebuje. Na chwilę obecną najwięcej czerpię z psychoterapii neurolingwistycznej oraz terapii schematu.</p>
       <p>Uważam również, że psychoterapia nie dotyczy tylko „głowy”, więc jestem uważna na to, co dzieje się w ciele Klientki czy Klienta. Pytam też o sen, odżywianie, choroby współistniejące oraz przyjmowane leki i suplementy, a jeśli trzeba, proponuję konsultację lekarską.</p>
       <!-- TODO: klientka — dokończyć zdanie „Uważam, że głównym zadaniem psychoterapii jest…” (w tekście źródłowym urwane, na stronie pominięte) -->
       <p>Jestem w stałym procesie superwizyjnym, który pomaga mi lepiej rozumieć, co dzieje się w trakcie konkretnego procesu psychoterapii, i wzbogaca moją praktykę.</p>
-      <p>Jestem członkinią Zarządu Polskiego Stowarzyszenia Neurolingwistycznej Psychoterapii (kadencja 2026–2030) oraz członkinią zwyczajną International Society of Schema Therapy.</p>
+      <p><a href="index.html#jak-pracuje">Więcej o tym, jak pracuję</a></p>
     </div>
   </section>
 
-  <!-- ===== Certyfikaty ===== -->
-  <section id="certyfikaty" class="wrap sec--bottom" aria-labelledby="certyfikaty-title">
-    <div class="g2 places__head">
-      <div>
-        <p class="eyebrow">CERTYFIKATY</p>
-        <h2 class="h2" id="certyfikaty-title">Dyplomy i&nbsp;certyfikaty.</h2>
+  <!-- ===== Dyplomy i certyfikaty (pas pełnej szerokości, jak Oferta) ===== -->
+  <section id="certyfikaty" class="band band--mint" aria-labelledby="certyfikaty-title">
+    <div class="wrap">
+      <div class="offer__head">
+        <div>
+          <p class="eyebrow">CERTYFIKATY</p>
+          <h2 class="h2" id="certyfikaty-title">Dyplomy i&nbsp;certyfikaty.</h2>
+        </div>
+        <p class="offer__intro">Kliknięcie miniatury otwiera pełny skan w nowej karcie. Dane osobowe na dokumentach zostały zakryte.</p>
       </div>
-      <div class="about__body">
-        <dl class="edu__list">
-          <dt>2011</dt>
-          <dd>Dyplom magistra psychologii, Uniwersytet Warszawski</dd>
-          <dt>2017</dt>
-          <dd>Dyplom doktora nauk społecznych, Uniwersytet Warszawski</dd>
-          <dt>2023</dt>
-          <dd>Certyfikat psychoterapeuty neurolingwistycznego, nr 22/2023</dd>
-          <dt>2026</dt>
-          <dd>Certyfikat terapeutki schematu, nr IND-4366</dd>
-          <!-- TODO: klientka — certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer, dodać skan do galerii -->
-          <dt>—</dt>
-          <dd>Certyfikat Polskiej Rady Psychoterapii (w trakcie)</dd>
-        </dl>
-      </div>
-    </div>
 
-    <!-- Skany: WebP spłaszczone z PDF-ów (zakrycia wtopione w obraz, bez metadanych). Oryginałów PDF nie dodawać do repo. -->
-    <ul class="certs">
-      <li>
-        <figure class="cert">
-          <a class="cert__thumb" href="img/certyfikaty/dyplom-magistra.webp" target="_blank" rel="noopener">
-            <img src="img/certyfikaty/dyplom-magistra.webp" alt="" width="1600" height="1141" loading="lazy" decoding="async">
-            <span class="visually-hidden">Skan: dyplom magistra psychologii (otwiera się w nowej karcie)</span>
-          </a>
-          <figcaption>Dyplom magistra psychologii, Uniwersytet Warszawski</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure class="cert">
-          <a class="cert__thumb" href="img/certyfikaty/dyplom-doktora.webp" target="_blank" rel="noopener">
-            <img src="img/certyfikaty/dyplom-doktora.webp" alt="" width="1207" height="1600" loading="lazy" decoding="async">
-            <span class="visually-hidden">Skan: dyplom doktora nauk społecznych (otwiera się w nowej karcie)</span>
-          </a>
-          <figcaption>Dyplom doktora nauk społecznych, Uniwersytet Warszawski</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure class="cert">
-          <a class="cert__thumb" href="img/certyfikaty/certyfikat-nlpt.webp" target="_blank" rel="noopener">
-            <img src="img/certyfikaty/certyfikat-nlpt.webp" alt="" width="1600" height="1130" loading="lazy" decoding="async">
-            <span class="visually-hidden">Skan: certyfikat psychoterapeuty neurolingwistycznego (otwiera się w nowej karcie)</span>
-          </a>
-          <figcaption>Certyfikat psychoterapeuty neurolingwistycznego, nr 22/2023</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure class="cert">
-          <a class="cert__thumb" href="img/certyfikaty/certyfikat-terapia-schematu.webp" target="_blank" rel="noopener">
-            <img src="img/certyfikaty/certyfikat-terapia-schematu.webp" alt="" width="1236" height="1600" loading="lazy" decoding="async">
-            <span class="visually-hidden">Skan: certyfikat terapeutki schematu (otwiera się w nowej karcie)</span>
-          </a>
-          <figcaption>Certyfikat terapeutki schematu, nr IND-4366</figcaption>
-        </figure>
-      </li>
-    </ul>
+      <div class="offer offer--2">
+        <div class="card">
+          <h3 class="eyebrow" id="kwalifikacje-title">KWALIFIKACJE</h3>
+          <dl class="edu__list" aria-labelledby="kwalifikacje-title">
+            <dt>2011</dt>
+            <dd>Dyplom magistra psychologii, Uniwersytet Warszawski</dd>
+            <dt>2017</dt>
+            <dd>Dyplom doktora nauk społecznych, Uniwersytet Warszawski</dd>
+            <dt>2023</dt>
+            <dd>Certyfikat psychoterapeuty neurolingwistycznego, nr 22/2023</dd>
+            <dt>2026</dt>
+            <dd>Certyfikat terapeutki schematu, nr IND-4366</dd>
+            <!-- TODO: klientka — certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer, dodać skan do galerii -->
+            <dt>—</dt>
+            <dd>Certyfikat Polskiej Rady Psychoterapii (w trakcie)</dd>
+          </dl>
+        </div>
+        <div class="card">
+          <h3 class="eyebrow" id="czlonkostwo-title">CZŁONKOSTWO</h3>
+          <dl class="edu__list" aria-labelledby="czlonkostwo-title">
+            <dt>2026–2030</dt>
+            <dd>Członkini Zarządu Polskiego Stowarzyszenia Neurolingwistycznej Psychoterapii</dd>
+            <dt>—</dt>
+            <dd>Członkini zwyczajna International Society of Schema Therapy</dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Skany: WebP spłaszczone z PDF-ów (zakrycia wtopione w obraz, bez metadanych). Oryginałów PDF nie dodawać do repo. -->
+      <ul class="certs">
+        <li>
+          <figure class="cert">
+            <a class="cert__thumb" href="img/certyfikaty/dyplom-magistra.webp" target="_blank" rel="noopener">
+              <img src="img/certyfikaty/dyplom-magistra.webp" alt="" width="1600" height="1141" loading="lazy" decoding="async">
+              <span class="visually-hidden">Skan: dyplom magistra psychologii (otwiera się w nowej karcie)</span>
+            </a>
+            <figcaption>Dyplom magistra psychologii, Uniwersytet Warszawski</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cert">
+            <a class="cert__thumb" href="img/certyfikaty/dyplom-doktora.webp" target="_blank" rel="noopener">
+              <img src="img/certyfikaty/dyplom-doktora.webp" alt="" width="1207" height="1600" loading="lazy" decoding="async">
+              <span class="visually-hidden">Skan: dyplom doktora nauk społecznych (otwiera się w nowej karcie)</span>
+            </a>
+            <figcaption>Dyplom doktora nauk społecznych, Uniwersytet Warszawski</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cert">
+            <a class="cert__thumb" href="img/certyfikaty/certyfikat-nlpt.webp" target="_blank" rel="noopener">
+              <img src="img/certyfikaty/certyfikat-nlpt.webp" alt="" width="1600" height="1130" loading="lazy" decoding="async">
+              <span class="visually-hidden">Skan: certyfikat psychoterapeuty neurolingwistycznego (otwiera się w nowej karcie)</span>
+            </a>
+            <figcaption>Certyfikat psychoterapeuty neurolingwistycznego, nr 22/2023</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="cert">
+            <a class="cert__thumb" href="img/certyfikaty/certyfikat-terapia-schematu.webp" target="_blank" rel="noopener">
+              <img src="img/certyfikaty/certyfikat-terapia-schematu.webp" alt="" width="1236" height="1600" loading="lazy" decoding="async">
+              <span class="visually-hidden">Skan: certyfikat terapeutki schematu (otwiera się w nowej karcie)</span>
+            </a>
+            <figcaption>Certyfikat terapeutki schematu, nr IND-4366</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <!-- ===== Szkolenia ===== -->
-  <section id="szkolenia" class="wrap g2 sec--bottom" aria-labelledby="szkolenia-title">
+  <section id="szkolenia" class="wrap g2 sec" aria-labelledby="szkolenia-title">
     <div>
       <p class="eyebrow">SZKOLENIA</p>
-      <h2 class="h2" id="szkolenia-title">Szkolenia, które kształtowały mój&nbsp;warsztat.</h2>
+      <h2 class="h2 why__title" id="szkolenia-title">Szkolenia, które kształtowały mój&nbsp;warsztat.</h2>
+      <p class="why__note">Poza dwoma głównymi nurtami uczyłam się m.in. pracy z ciałem, hipnozy i ustawień systemowych.</p>
     </div>
     <ul class="steps steps--plain">
       <li class="step">
@@ -239,19 +287,30 @@
     </ul>
   </section>
 
-  <!-- ===== Zaproszenie do kontaktu ===== -->
-  <section class="wrap g2 sec--bottom" aria-labelledby="cta-title">
-    <div>
-      <p class="eyebrow">KONTAKT</p>
-      <h2 class="h2" id="cta-title">Pierwszy krok to&nbsp;wiadomość.</h2>
-    </div>
-    <div class="about__body">
-      <p>Pierwsze trzy spotkania to konsultacja: poznajemy się i wspólnie decydujemy, czy chcemy razem pracować. Proszę zadzwonić lub wysłać SMS.</p>
-      <div class="hero__actions">
-        <a class="btn" href="index.html#kontakt">Umów konsultację</a>
-        <!-- TODO: klientka — potwierdzić, że numer BLIK to też numer kontaktowy -->
-        <a class="hero__phone" href="tel:+48502733097">+48 502 733 097</a>
+  <!-- ===== Kontakt (pas pełnej szerokości, jak #kontakt na stronie głównej) ===== -->
+  <section id="kontakt" class="band band--teal" aria-labelledby="kontakt-title">
+    <div class="wrap g2">
+      <div>
+        <p class="eyebrow eyebrow--on-teal">KONTAKT I ZAPIS</p>
+        <h2 class="h2 contact__title" id="kontakt-title">Pierwszy krok to&nbsp;wiadomość.</h2>
+        <p class="contact__intro">Pierwsze trzy spotkania to konsultacja: poznajemy się i wspólnie decydujemy, czy chcemy razem pracować. Proszę zadzwonić lub wysłać SMS.</p>
       </div>
+      <address class="contact__list">
+        <div>
+          <div class="contact__label">Telefon</div>
+          <!-- TODO: klientka — potwierdzić, że numer BLIK to też numer kontaktowy -->
+          <a class="contact__link" href="tel:+48502733097">+48 502 733 097</a>
+        </div>
+        <div>
+          <div class="contact__label">E-mail</div>
+          <!-- TODO: klientka — domena do kupienia; ustawić przekierowanie na skrzynkę Gmail -->
+          <a class="contact__link contact__link--mail" href="mailto:kontakt@ewahamerszmit.pl">kontakt@ewahamerszmit.pl</a>
+        </div>
+        <div>
+          <div class="contact__label">Gabinety</div>
+          <div class="contact__address">Wola, ul. Łucka · Mokotów, ul. Sielecka · Online<br><a class="contact__more" href="index.html#gabinety">Adresy i godziny na stronie głównej</a></div>
+        </div>
+      </address>
     </div>
   </section>
 

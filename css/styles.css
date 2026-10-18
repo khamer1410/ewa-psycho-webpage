@@ -773,28 +773,47 @@ a:hover { color: var(--teal); }
 
 /* ==========================================================================
    Podstrony: o-mnie.html, wspolpraca.html
-   (na końcu pliku, żeby nadpisać padding .sec z media query)
+   Układ jak na stronie głównej: hero → sekcje .g2 → pas .band--mint → sekcje
+   → pas .band--teal (kontakt). Poniżej tylko to, czego brakuje w klockach.
    ========================================================================== */
-.page-head { padding-top: 48px; }
-
 .about__body a,
-.step__text a { color: var(--teal); text-underline-offset: 3px; }
+.card__text a { color: var(--teal); text-underline-offset: 3px; }
 .about__body a:hover,
-.step__text a:hover { color: var(--cta-hover); }
+.card__text a:hover { color: var(--cta-hover); }
 
 .about__body .bullets { gap: 8px; }
+
+/* wspolpraca.html — spis treści pod leadem w nagłówku strony */
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.toc a { color: var(--teal); text-underline-offset: 3px; }
+.toc a:hover { color: var(--cta-hover); }
+
+/* wspolpraca.html — kilka akapitów w jednym kroku, notka „Wsparcie psychologiczne” pod krokami */
+.step__text + .step__text { margin-top: 10px; }
+.card--row { background: var(--row); margin-top: 32px; }
+.card--row .card__text { color: var(--body); }
+
+/* Karty w 2 kolumnach (zasady współpracy, kwalifikacje na pasie mięty) */
+.offer--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 /* o-mnie.html — galeria miniatur skanów certyfikatów (bez JS: link otwiera skan w nowej karcie) */
 .certs {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+  margin-top: 40px;
 }
 .cert__thumb {
   display: block;
   aspect-ratio: 1 / 1;       /* kwadrat: mieści skany pionowe i poziome */
   padding: 12px;
-  background: var(--row);
+  background: var(--bg);     /* na pasie mięty, jak karty Oferty */
   border-radius: 16px;
   overflow: hidden;
 }
@@ -807,9 +826,12 @@ a:hover { color: var(--teal); }
   margin-top: 10px;
   font-size: 14px;
   line-height: 1.45;
-  color: var(--muted);
+  color: var(--on-mint);
   text-wrap: pretty;
 }
 @media (max-width: 1040px) {
   .certs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .offer--2 { grid-template-columns: minmax(0, 1fr); }
 }
