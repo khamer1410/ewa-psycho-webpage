@@ -39,6 +39,8 @@ Przed publikacją uzupełnij dane z listy poniżej („Do uzupełnienia”).
 
 ## Do uzupełnienia (checklista)
 
+**Żółte fragmenty na stronie.** Wszystko, co na stronie ma żółte tło i kursywę, to tekst roboczy albo dane przykładowe: nie są to Pani słowa. Reszta tekstów jest przeniesiona z Pani dokumentu słowo w słowo. Każdy żółty fragment trzeba zastąpić własnym tekstem, zaakceptować albo usunąć. Strona jest gotowa, gdy nie ma na niej nic żółtego.
+
 Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. Najprościej wyszukać w edytorze tekstu frazę `TODO`.
 
 **Do potwierdzenia lub dostarczenia przez klientkę**

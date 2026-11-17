@@ -858,3 +858,20 @@ a:hover { color: var(--teal); }
   .link-page::after,
   .link-ext::after { transition: none; }
 }
+
+/* ==========================================================================
+   TYMCZASOWE oznaczenie treści roboczych (decyzja właściciela).
+   Klasa .todo = tekst, który NIE pochodzi od autorki (placeholder lub wersja
+   robocza) albo wymaga jej potwierdzenia. Po uzupełnieniu/akceptacji usunąć
+   klasę z elementu. Przed oficjalnym startem na stronie nie może zostać
+   ani jedno .todo; wtedy usunąć też ten blok.
+   ========================================================================== */
+.todo {
+  background: #FFE98F;
+  color: #3A2E00;
+  font-style: italic;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+span.todo, a.todo { padding: 0 .2em; }
+.todo em, .todo a { color: inherit; }

@@ -31,8 +31,10 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 
 ## 4. Zasady pisania treści
 
+- **Tekst autorki idzie na stronę SŁOWO W SŁOWO.** Źródłem jest dokument od klientki („Opis na stronę www”) i to, co sama później dopisze. Nie parafrazuj, nie skracaj zdań, nie „wygładzaj” stylu, nie zamieniaj „Klientka lub Klient” na „Pani/Pan”. Wolno: wybrać całe zdania lub akapity do danej sekcji, poprawić typografię (cudzysłowy „ ”, półpauzy, podwójne spacje) i pominąć dane, których nie publikujemy (numer rachunku, prywatny e-mail). Decyzja właściciela po skardze autorki, że tekst nie był jej słowami.
+- **Wszystko, co nie jest słowami autorki, dostaje klasę `todo`** (żółte tło, kursywa; styl na końcu `css/styles.css`): nagłówki i leady napisane przez agenta, dane przykładowe, fragmenty do potwierdzenia. Na elemencie blokowym: `class="… todo"`, w środku zdania: `<span class="todo">…</span>`. Klasę zdejmuje się dopiero, gdy autorka poda własny tekst albo wprost zaakceptuje fragment. Nie oznaczamy etykiet interfejsu (menu, eyebrowy, przyciski, „Telefon”, „E-mail”, tytuły kroków i kart) ani danych tabelarycznych z jej tekstu i skanów (lata, ceny, numery certyfikatów).
 - Zawód autorki: **„psycholog”** (np. „jestem psychologiem”, „PSYCHOLOG · PSYCHOTERAPEUTKA”), **nigdy „psycholożka”**. Decyzja właściciela. „Psychoterapeutka” zostaje w formie żeńskiej.
-- Po polsku, forma **„Pani/Pan”** (np. „w tempie, które Pani/Pan wyznacza”), nigdy „Ty”. Ton spokojny, konkretny, bez egzaltacji i bez żargonu klinicznego. Przykład wzorcowy: teksty w `#wizyta` i `#oferta`.
+- W tekstach roboczych (tych z klasą `todo`): po polsku, forma **„Pani/Pan”** (np. „w tempie, które Pani/Pan wyznacza”), nigdy „Ty”. Ton spokojny, konkretny, bez egzaltacji i bez żargonu klinicznego. Przykład wzorcowy: teksty w `#wizyta` i `#oferta`.
 - Zdania krótkie. Jeden akapit = jedna myśl. Eyebrowy wielkimi literami, 2–4 słowa.
 - Nagłówki H2 w stylu „zdanie, nie etykieta”: „Jak wygląda pierwsze spotkanie”, „Pierwszy krok to wiadomość.” Przed ostatnim krótkim wyrazem w H2 daj `&nbsp;`, żeby nie został sam w linii.
 - Nie nazywaj metod skrótami bez rozwinięcia przy pierwszym użyciu w sekcji (NLP jest wyjątkiem, bo tak jest w projekcie).
