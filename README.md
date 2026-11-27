@@ -13,7 +13,7 @@ Strona nie używa cookies, analityki ani zewnętrznych skryptów i fontów (wszy
 | `pierwsza-wizyta.html` | Podstrona „Jak wygląda współpraca”: pierwsze spotkania, zasady współpracy (kontrakt), poufność. |
 | `css/styles.css` | Wygląd strony (kolory, odstępy, układ na telefonie i komputerze). |
 | `css/fonts.css` | Podpięcie fontów z folderu `fonts/`. |
-| `fonts/` | Fonty Newsreader i Figtree (pliki `.woff2`, z polskimi znakami). |
+| `fonts/` | Fonty Newsreader i Lato (pliki `.woff2`, z polskimi znakami). |
 | `js/nav.js` | Menu rozwijane na telefonie (przycisk z trzema kreskami). |
 | `img/` | Zdjęcia (na razie brak) oraz mapa sekcji Gabinety (`mapa-warszawa.webp` i jej parametry w `mapa-warszawa.json`). |
 | `img/certyfikaty/` | Skany dyplomów i certyfikatów (WebP) do galerii na podstronie „Kwalifikacje”. |

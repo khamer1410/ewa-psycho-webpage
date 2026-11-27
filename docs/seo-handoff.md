@@ -15,7 +15,7 @@ Dokument dla agenta lub osoby, która ma przygotować strategię SEO i rekomenda
 - Repozytorium: `github.com/khamer1410/ewa-psycho-webpage`, gałąź robocza `main`, gałąź wydań `prod`, publiczne.
 - Hosting: GitHub Pages, deploy przy każdej zmianie gałęzi `prod` (wydanie robi właściciel). Adres tymczasowy `https://khamer1410.github.io/ewa-psycho-webpage/`. Docelowo własna domena przez Custom domain w ustawieniach Pages.
 - Stack: czysty HTML + CSS + ~2 KB JS (menu mobilne). Zero build stepu, zero frameworków, zero CMS. Każda zmiana treści to edycja `index.html`.
-- Pliki: `index.html`, `css/styles.css`, `css/fonts.css`, `js/nav.js`, `fonts/*.woff2` (Newsreader, Figtree, self-hosted), `img/`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `README.md` (instrukcja dla klientki z checklistą TODO).
+- Pliki: `index.html`, `css/styles.css`, `css/fonts.css`, `js/nav.js`, `fonts/*.woff2` (Newsreader, Lato, self-hosted), `img/`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `README.md` (instrukcja dla klientki z checklistą TODO).
 - Sekcje i kotwice: `#top` (hero), `#o-mnie`, `#oferta`, `#cennik`, `#gabinety` (w trakcie dodawania), `#opinie` (zakodowana, ukryta atrybutem `hidden`), `#kontakt`. Planowana jeszcze sekcja „dlaczego terapia z człowiekiem, a nie porady od AI”.
 - Wszystkie miejsca z danymi do podmiany mają komentarz `<!-- TODO: klientka — ... -->` (ponad 20 sztuk).
 

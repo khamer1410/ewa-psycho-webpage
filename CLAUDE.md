@@ -91,7 +91,7 @@ Serwer podglądu: konfiguracja `static` w `.claude/launch.json` (`python3 -m htt
 ## 10. Decyzje właściciela, których nie podważaj bez pytania
 
 - Czysty HTML, bez frameworka i build stepu.
-- Fonty self-hosted, bez Google Fonts.
+- Fonty self-hosted, bez Google Fonts: Newsreader (nagłówki) i Lato (tekst; od 2026-11-27 zamiast Figtree, bo lepiej rysuje polskie znaki). Lato ma tylko wagi 400, 400 italic i 700 — nie używaj 500/600 w tekście bezszeryfowym.
 - Brak formularza, brak polityki prywatności, brak cookies.
 - Opinie ukryte.
 - Mapa statyczna, nie Google Maps.
