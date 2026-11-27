@@ -72,7 +72,7 @@ Każda podstrona ma własny tytuł, opis i adres kanoniczny w `<head>`. Przy zmi
 
 ## Gabinety i mapa
 
-Sekcja „Gabinety” (między Cennikiem a Kontaktem) pokazuje dwa gabinety w Warszawie i spotkania online: mapę z dwiema pinezkami oraz trzy karty z adresem. Dni i godzin przyjęć celowo nie podajemy (terminy ustalane przy pierwszym kontakcie).
+Sekcja z gabinetami (nagłówek „KONTAKT”, między Cennikiem a pasem kontaktu; prowadzi do niej link „Kontakt” w menu) pokazuje dwa gabinety w Warszawie i spotkania online: mapę z dwiema pinezkami oraz trzy karty z adresem. Dni i godzin przyjęć celowo nie podajemy (terminy ustalane przy pierwszym kontakcie).
 
 **Co podmienić w `index.html`** (miejsca oznaczone `TODO: klientka`):
 - te same dane w JSON-LD w `<head>` (blok `"location"`): adres i współrzędne (`"geo"`).

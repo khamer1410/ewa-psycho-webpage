@@ -46,7 +46,7 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 1. Skopiuj markup najbliższej istniejącej sekcji (`<section id="…" class="wrap g2 sec" aria-labelledby="…-title">`), z `.eyebrow` i `.h2` po lewej oraz treścią po prawej. Pasy pełnej szerokości (`.band`) to wyjątek, nie reguła: na stronie są dwa (Oferta, Kontakt) i więcej nie potrzeba.
 2. Dobierz `.sec` lub `.sec--bottom` tak, żeby odstęp między sekcjami był taki sam jak u sąsiadów (96px desktop / 64px mobile, pasy 88px). Zmierz w przeglądarce, nie zgaduj.
 3. Semantyka: jeden `<h1>` na stronie (hero), sekcje mają `<h2>`, elementy w sekcji `<h3>`. Listy jako `<ul>/<ol>/<dl>`, dane kontaktowe w `<address>`, cytaty w `<figure><blockquote>`.
-4. Link w nawigacji dodaj tylko dla sekcji, do której użytkownik realnie chce skakać (dziś 6 linków, więcej zaczyna się nie mieścić przy 1120px). Dodając, zaktualizuj oba miejsca: `.nav__links` i listę w menu mobilnym.
+4. Link w nawigacji dodaj tylko dla sekcji, do której użytkownik realnie chce skakać (dziś 5 linków: O mnie, Oferta, Pierwsza wizyta, Cennik, Kontakt → `#gabinety`, eyebrow sekcji to „KONTAKT”; więcej zaczyna się nie mieścić przy 1120px). Dodając, zaktualizuj oba miejsca: `.nav__links` i listę w menu mobilnym.
 5. Jeśli sekcja wprowadza dane strukturalne (adresy, godziny, cennik, FAQ), zaktualizuj JSON-LD w `<head>`. Używaj tylko typów, które istnieją w schema.org (sprawdź). Po edycji zweryfikuj `JSON.parse`.
 6. Dopisz do `README.md` (dokument dla klientki, prosty język) wszystko, co klientka musi uzupełnić lub może włączyć/wyłączyć.
 
