@@ -47,6 +47,7 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 2. Dobierz `.sec` lub `.sec--bottom` tak, żeby odstęp między sekcjami był taki sam jak u sąsiadów (96px desktop / 64px mobile, pasy 88px). Zmierz w przeglądarce, nie zgaduj.
 3. Semantyka: jeden `<h1>` na stronie (hero), sekcje mają `<h2>`, elementy w sekcji `<h3>`. Listy jako `<ul>/<ol>/<dl>`, dane kontaktowe w `<address>`, cytaty w `<figure><blockquote>`.
 4. Link w nawigacji dodaj tylko dla sekcji, do której użytkownik realnie chce skakać (dziś 6 linków: O mnie → `#o-mnie`, Kwalifikacje → `kwalifikacje.html`, Oferta, Pierwsza wizyta, Cennik, Kontakt → `#gabinety`, eyebrow sekcji to „KONTAKT”; więcej zaczyna się nie mieścić przy 1120px). Dodając, zaktualizuj oba miejsca: `.nav__links` i listę w menu mobilnym.
+   Aktywny link: na podstronie `aria-current="page"` wpisane w HTML (menu i stopka); na stronie głównej `js/nav.js` ustawia `aria-current="location"` linkowi do sekcji widocznej na ekranie. Nowa podstrona dostaje `aria-current="page"` na swoim linku.
 5. Jeśli sekcja wprowadza dane strukturalne (adresy, godziny, cennik, FAQ), zaktualizuj JSON-LD w `<head>`. Używaj tylko typów, które istnieją w schema.org (sprawdź). Po edycji zweryfikuj `JSON.parse`.
 6. Dopisz do `README.md` (dokument dla klientki, prosty język) wszystko, co klientka musi uzupełnić lub może włączyć/wyłączyć.
 

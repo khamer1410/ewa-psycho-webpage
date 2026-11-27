@@ -52,3 +52,44 @@
   if (desktop.addEventListener) desktop.addEventListener('change', onChange);
   else if (desktop.addListener) desktop.addListener(onChange);
 })();
+
+/*
+  Aktywny link w menu na stronie głównej: link do sekcji, na której jest
+  czytelnik, dostaje aria-current="location" (styl w css/styles.css).
+  Na podstronach aktywny link ma aria-current="page" wpisane w HTML.
+*/
+(function () {
+  'use strict';
+
+  var items = [].slice.call(document.querySelectorAll('.nav__links a[href^="#"]'))
+    .map(function (a) { return { a: a, el: document.getElementById(a.getAttribute('href').slice(1)) }; })
+    .filter(function (item) { return item.el; });
+  if (!items.length) return;
+
+  var queued = false;
+
+  function update() {
+    queued = false;
+    var line = window.innerHeight * 0.35;
+    var current = null;
+    items.forEach(function (item) {
+      if (item.el.getBoundingClientRect().top <= line) current = item;
+    });
+    // Na samym dole strony aktywny jest ostatni link (Kontakt).
+    if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2) {
+      current = items[items.length - 1];
+    }
+    items.forEach(function (item) {
+      if (item === current) item.a.setAttribute('aria-current', 'location');
+      else item.a.removeAttribute('aria-current');
+    });
+  }
+
+  function queue() {
+    if (!queued) { queued = true; window.requestAnimationFrame(update); }
+  }
+
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  update();
+})();

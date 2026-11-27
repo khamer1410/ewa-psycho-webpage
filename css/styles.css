@@ -182,6 +182,14 @@ a:hover { color: var(--teal); }
   color: var(--teal);
 }
 .nav__links a { color: inherit; text-decoration: none; }
+/* Aktywny link: bieżąca podstrona (aria-current="page") albo sekcja strony głównej,
+   na której jest czytelnik (aria-current="location", ustawiane w js/nav.js). */
+.nav__links a[aria-current] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
 
 .nav__actions {
   display: flex;
@@ -723,6 +731,7 @@ a:hover { color: var(--teal); }
 .footer__links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .footer__links a { color: inherit; text-underline-offset: 3px; }
 .footer__links a:hover { color: var(--teal); }
+.footer__links a[aria-current] { color: var(--ink); font-weight: 600; }
 
 /* ==========================================================================
    Responsywność
