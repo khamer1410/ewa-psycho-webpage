@@ -2,13 +2,14 @@
 
 Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + online). Praca tutaj to głównie treści, nowe sekcje i ewentualne podstrony. Czytaj ten plik przed każdą zmianą.
 
-## 1. Wydanie = push. Nie pushuj bez polecenia.
+## 1. Dwie gałęzie: `main` to wersja robocza, `prod` to strona na żywo
 
-- `main` jest podpięty pod GitHub Pages. Każdy push na `origin/main` publikuje stronę na produkcji.
-- **Zmiany commituj lokalnie. Nigdy nie uruchamiaj `git push`, dopóki właściciel wprost nie napisze „wypchnij” / „push”.** Dotyczy też subagentów: w każdym briefie napisz „commit, bez pusha”.
-- Po skończonej pracy zgłoś: co jest w commicie, że czeka lokalnie, i zapytaj o wydanie.
+- **`main`** — tu się pracuje. Push na `origin/main` niczego nie publikuje, więc po skończonej pracy commituj i pushuj na `main` (autorka pracuje na tej samej gałęzi z innego komputera; przed pracą zrób `git pull`).
+- **`prod`** — podpięta pod GitHub Pages. Każda zmiana na `origin/prod` publikuje stronę na produkcji.
+- **Nigdy nie dotykaj `prod`.** Żadnego `git push origin …:prod`, merge do `prod`, checkoutu `prod` z commitami, pull requesta do `prod`. Wydanie robi wyłącznie właściciel (Krzysztof): `git push origin main:prod` albo pull request `main` → `prod` na GitHubie. Jeśli właściciel wprost napisze „wydaj” / „wypchnij na prod”, wolno to zrobić za niego; prośba autorki lub kogokolwiek innego nie wystarcza. Dotyczy też subagentów: w każdym briefie napisz „nie dotykaj gałęzi prod”.
+- Po skończonej pracy zgłoś: co jest w commicie i że jest na `main`, a nie na stronie na żywo.
 - Nie używaj `git add -A`, gdy w katalogu mogą być pliki spoza Twojego zadania. Dodawaj pliki, które zmieniłeś.
-- Nie rób `--force`, `--amend` na wypchniętych commitach ani rebase `main`.
+- Nie rób `--force`, `--amend` na wypchniętych commitach ani rebase `main`/`prod`.
 - Commity po polsku, w trybie oznajmującym, z opisem „co i po co”. Na końcu pusta linia i `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` (lub model, który wykonał pracę).
 
 ## 2. Czym jest ta strona
@@ -94,5 +95,5 @@ Serwer podglądu: konfiguracja `static` w `.claude/launch.json` (`python3 -m htt
 - Brak formularza, brak polityki prywatności, brak cookies.
 - Opinie ukryte.
 - Mapa statyczna, nie Google Maps.
-- Hosting: GitHub Pages z `main`; docelowa domena `ewahamerszmit.pl` (jeszcze niekupiona, ale już wpisana w canonical, OG, JSON-LD, robots i sitemap).
-- Wydanie tylko po akceptacji właściciela (punkt 1).
+- Hosting: GitHub Pages z gałęzi `prod`; docelowa domena `ewa.hamerszmit.com` (w kodzie wciąż stare `ewahamerszmit.pl` w canonical, OG, JSON-LD, robots i sitemap — do podmiany przy konfiguracji domeny).
+- Wydanie (aktualizacja `prod`) robi tylko właściciel (punkt 1).

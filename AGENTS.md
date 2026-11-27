@@ -4,7 +4,7 @@ Pełne zasady pracy w tym repo są w [`CLAUDE.md`](CLAUDE.md). **Przeczytaj go p
 
 Najważniejsze w skrócie:
 
-1. **Push na `main` = publikacja strony na produkcji.** Commituj lokalnie. Nie rób `git push` bez wyraźnej zgody użytkownika w czacie. Przed pushem pokaż, co się zmieniło.
+1. **Pracujemy tylko na gałęzi `main`.** Przed pracą `git pull`, po pracy commit i `git push` na `main`. To wersja robocza: push na `main` niczego nie publikuje. **Gałęzi `prod` (strona na żywo) nie wolno dotykać**: żadnego pusha, merge ani pull requesta do `prod`. Publikację robi wyłącznie Krzysztof.
 2. **Czysty HTML + CSS.** Bez frameworków, npm, build stepu. Żadnych zewnętrznych skryptów, fontów, map, analityki, embedów.
 3. **Wygląd strony jest zamrożony.** Nie zmieniaj kolorów, fontów, odstępów ani `css/styles.css` bez wyraźnej prośby. Nowe treści wstawiaj w istniejące sekcje i klasy.
 4. **Tekst autorki zostaje słowo w słowo.** Nie parafrazuj, nie skracaj, nie poprawiaj stylu. Jeśli autorka dyktuje lub wkleja nowy tekst, wstaw go dokładnie tak, jak go podała (popraw tylko literówki, o które poprosi).
