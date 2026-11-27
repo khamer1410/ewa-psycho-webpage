@@ -13,4 +13,4 @@ Najważniejsze w skrócie:
 7. **Nie wymyślaj faktów** (adresy, godziny, ceny, certyfikaty). Brakujące dane oznaczone są komentarzem `<!-- TODO: klientka … -->`. Po uzupełnieniu usuń komentarz i odhacz pozycję w `README.md`.
 8. **Sekcja `#opinie` zostaje ukryta** (`hidden`). Nie generuj opinii.
 9. **Zmieniając adres lub godziny**, popraw je też w JSON-LD w `<head>` pliku `index.html`.
-10. **Nie publikuj** numeru konta bankowego ani prywatnego adresu e-mail.
+10. **Nie publikuj** numeru konta bankowego. E-mail `ewa.hamerszmit@gmail.com` jest na stronie tymczasowo, z decyzji właściciela; nie dodawaj innych prywatnych adresów.

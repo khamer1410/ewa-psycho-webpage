@@ -54,7 +54,7 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 
 **Domena i e-mail**
 - [x] Domena: strona działa pod `https://ewa.hamerszmit.com/` (plik `CNAME`, wpis CNAME `ewa` → `khamer1410.github.io.` w OVH). Adres jest wpisany w `canonical`, `og:url`, `og:image`, JSON-LD, `robots.txt` i `sitemap.xml`.
-- [ ] E-mail: na stronie wciąż jest `kontakt@ewahamerszmit.pl` (nieistniejąca domena). Wybrać adres (np. na `hamerszmit.com`; na `ewa.hamerszmit.com` nie da się łatwo, bo CNAME wyklucza MX), ustawić skrzynkę lub przekierowanie na Gmail i podmienić. Ten adres jest na stronie głównej (Kontakt, JSON-LD) i w `pierwsza-wizyta.html` (rachunek imienny). Prywatny adres Gmail celowo nie jest publikowany.
+- [ ] E-mail: na stronie jest tymczasowo `ewa.hamerszmit@gmail.com` (decyzja właściciela z 2026-11-27). Docelowo adres na `hamerszmit.com` (np. przekierowanie na Gmail) — wtedy podmienić w trzech plikach HTML i w JSON-LD (`"email"`).
 
 **Świadomie nie na stronie**
 - Numer rachunku bankowego. W treści jest „przelewem na rachunek podany po pierwszej sesji”. Numeru nie należy dopisywać do żadnego pliku w tym folderze (repozytorium jest publiczne).
