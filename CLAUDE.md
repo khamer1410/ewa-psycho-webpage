@@ -15,8 +15,8 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 ## 2. Czym jest ta strona
 
 - Czysty HTML + CSS + ~2 KB JS (`js/nav.js`, menu mobilne). **Zero build stepu, zero frameworków, zero npm, zero CMS.** Strona ma działać po wrzuceniu plików na dowolny hosting i z `file://`.
-- Strona główna `index.html` (one-pager), sekcje z kotwicami. Kolejność: `#top` (hero) → `#o-mnie` → `#jak-pracuje` → `#oferta` → `#dlaczego` → `#wizyta` → `#cennik` → `#gabinety` → `#opinie` (ukryta) → `#kontakt`.
-- Dwie podstrony (decyzja właściciela): `o-mnie.html` (pełne bio, certyfikaty z galerią skanów, szkolenia) i `wspolpraca.html` (pierwsze spotkania, kontrakt, poufność). Menu ich nie zawiera; prowadzą do nich linki w treści i w stopce.
+- Strona główna `index.html` (one-pager), sekcje z kotwicami. Kolejność: `#top` (hero) → `#o-mnie` → `#jak-pracuje` → `#oferta` → `#cennik` → `#gabinety` → `#opinie` (ukryta) → `#kontakt`.
+- Dwie podstrony (decyzja właściciela): `o-mnie.html` (pełne bio, certyfikaty z galerią skanów, szkolenia) i `wspolpraca.html` (pierwsze spotkania, kontrakt, poufność). Link „Pierwsza wizyta” w menu prowadzi do `wspolpraca.html#pierwsze-spotkania`; poza tym do podstron prowadzą linki w treści i w stopce. `o-mnie.html` nie ma hero (decyzja właściciela), ma tylko ukryty `<h1 class="visually-hidden">`.
 - Cel biznesowy: telefon lub e-mail. **Brak formularza, rezerwacji, czatu** to świadome decyzje właściciela, nie braki.
 - Ścieżki tylko **względne** (`css/…`, `img/…`), bo strona bywa serwowana z podkatalogu (`/ewa-psycho-webpage/` na github.io).
 
@@ -39,7 +39,6 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 - Zdania krótkie. Jeden akapit = jedna myśl. Eyebrowy wielkimi literami, 2–4 słowa.
 - Nagłówki H2 w stylu „zdanie, nie etykieta”: „Jak wygląda pierwsze spotkanie”, „Pierwszy krok to wiadomość.” Przed ostatnim krótkim wyrazem w H2 daj `&nbsp;`, żeby nie został sam w linii.
 - Nie nazywaj metod skrótami bez rozwinięcia przy pierwszym użyciu w sekcji (NLP jest wyjątkiem, bo tak jest w projekcie).
-- AI / czaty można wspominać (sekcja `#dlaczego`), ale bez zawstydzania osób, które od nich zaczęły.
 - Polskie cudzysłowy „ ”, półpauza w zakresach (9:00–17:00), kropki w wyliczeniach tylko gdy zdania są pełne.
 
 ## 5. Jak dodać nową sekcję

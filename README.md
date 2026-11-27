@@ -39,24 +39,18 @@ Przed publikacją uzupełnij dane z listy poniżej („Do uzupełnienia”).
 
 ## Do uzupełnienia (checklista)
 
-**Żółte fragmenty na stronie.** Wszystko, co na stronie ma żółte tło i kursywę, to tekst roboczy albo dane przykładowe: nie są to Pani słowa. Reszta tekstów jest przeniesiona z Pani dokumentu słowo w słowo. Każdy żółty fragment trzeba zastąpić własnym tekstem, zaakceptować albo usunąć. Strona jest gotowa, gdy nie ma na niej nic żółtego.
+**Żółte fragmenty na stronie.** Klasa `todo` (żółte tło, kursywa) oznacza tekst roboczy, który nie jest Pani słowami. Treść strony została zweryfikowana i wszystkie żółte oznaczenia zdjęto; klasa zostaje do oznaczania nowych propozycji.
 
 Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. Najprościej wyszukać w edytorze tekstu frazę `TODO`.
 
 **Do potwierdzenia lub dostarczenia przez klientkę**
 - [ ] Telefon: czy numer +48 502 733 097 (podany przy BLIK-u) jest też numerem kontaktowym. Występuje w sekcji powitalnej, w Kontakcie, w JSON-LD (`"telephone"`) i na obu podstronach.
-- [ ] Zdanie „Jeśli nie odbiorę, oddzwonię.” w sekcji Kontakt: czy tak ma zostać.
-- [ ] Dokończenie zdania „Uważam, że głównym zadaniem psychoterapii jest…” (w tekście źródłowym urwane; na stronie na razie pominięte, miejsce oznaczone w `o-mnie.html`).
 - [ ] Certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer w `o-mnie.html` (teraz „w trakcie”) i dodać skan do galerii.
-- [ ] Nazwa szpitala: w tekście źródłowym raz „Wojskowy”, raz „Warszawski Instytut Medyczny”; na stronie wpisano „Wojskowy Instytut Medyczny” (szpital przy ul. Szaserów). Potwierdzić.
-- [ ] Częstotliwość sesji: w opisie pierwszej sesji „nie rzadziej niż raz w tygodniu”, w kontrakcie „ustalana indywidualnie, standardowo raz w tygodniu”. Potwierdzić, która wersja obowiązuje.
 - [ ] Faktura: w cenniku źródłowym jest „faktura lub rachunek imienny”, w kontrakcie tylko rachunek. Na stronie jest tylko rachunek imienny; jeśli wystawiane są też faktury, dopisać.
-- [ ] Sekcja „Rozmowa z człowiekiem”: akceptacja treści, w tym tonu i tego, czy nazywać AI wprost.
 - [ ] Adresy gabinetów (Wola, ul. Łucka i Mokotów, ul. Sielecka): numer budynku/lokalu i kod pocztowy w kartach sekcji Gabinety (obecnie `00/0` i `00-000`), krótki zapis w sekcji Kontakt oraz JSON-LD (`"location"` → `"streetAddress"`, `"postalCode"`).
 - [ ] Dni i godziny przyjęć: 3 karty w sekcji Gabinety (obecnie przykładowe) oraz JSON-LD (`"openingHoursSpecification"`).
 - [ ] Platforma spotkań online (Google Meet, Zoom lub inna): karta „Online” w sekcji Gabinety.
 - [ ] Mapa: po podaniu dokładnych adresów przegenerować ją skryptem i przekleić pozycje pinezek (opis w „Gabinety i mapa”).
-- [ ] Zdjęcia: portret do sekcji powitalnej i podstrony „O mnie” jest już dodany; brakuje drugiego, kwadratowego zdjęcia do sekcji „O mnie” na stronie głównej (opis poniżej).
 - [ ] Opinie: 3 cytaty, tylko jeśli sekcja ma być widoczna (opis poniżej).
 - [ ] Obrazek do udostępniania (`og-image.png`, 1200×630 px): plik trzeba przygotować i wrzucić do głównego folderu; na razie go nie ma.
 
@@ -102,19 +96,9 @@ Jeśli gabinety będą bardzo daleko od siebie, skrypt ostrzeże, że pinezki si
 
 ## Jak dodać zdjęcia
 
-Na stronie są dwa miejsca na zdjęcia, na razie wypełnione jednolitym beżowym tłem.
+Na stronie jest jedno zdjęcie: portret w sekcji powitalnej strony głównej (`img/portret-hero.webp`, pion 4:5, 1000 × 1250 px). Puste miejsce na drugie zdjęcie w sekcji „O mnie” zostało usunięte, a podstrona „O mnie” nie ma już nagłówka ze zdjęciem.
 
-| Miejsce | Nazwa pliku | Proporcje | Minimalny rozmiar |
-|---|---|---|---|
-| Sekcja powitalna (u góry) i nagłówek „O mnie” | `img/portret-hero.webp` ✓ dodane | pion 4:5 | 1000 × 1250 px |
-| Sekcja O mnie | `img/portret-o-mnie.jpg` | kwadrat 1:1 | 800 × 800 px |
-
-Format: JPG lub WebP, najlepiej skompresowany do ok. 200–400 KB (np. w squoosh.app).
-
-1. Wrzuć zdjęcia do folderu `img/` pod nazwami z tabeli. Jeśli używasz innej nazwy lub formatu WebP, zmień ją także w `src="..."`.
-2. W `index.html` znajdź komentarz `<!-- <img src="img/portret-o-mnie.jpg" ...> -->` i usuń znaki `<!--` na początku oraz `-->` na końcu tej linii.
-3. Jeśli zdjęcie ma inne wymiary niż w tabeli, popraw atrybuty `width` i `height` na rzeczywiste (zapobiega to „skakaniu” strony podczas ładowania).
-4. Sprawdź opis w atrybucie `alt` (np. „Ewa Hamerszmit w gabinecie”).
+Nowe zdjęcie: format WebP, skompresowany do ok. 200–400 KB (np. w squoosh.app), w folderze `img/`, z atrybutami `width`, `height` i `alt` w kodzie.
 
 ## Sekcja Opinie
 
