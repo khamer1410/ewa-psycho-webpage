@@ -771,7 +771,7 @@ a:hover { color: var(--teal); }
 }
 
 /* ==========================================================================
-   Podstrony: kwalifikacje.html, wspolpraca.html
+   Podstrony: kwalifikacje.html, pierwsza-wizyta.html
    Układ jak na stronie głównej: hero → sekcje .g2 → pas .band--mint → sekcje
    → pas .band--teal (kontakt). Poniżej tylko to, czego brakuje w klockach.
    ========================================================================== */
@@ -782,7 +782,7 @@ a:hover { color: var(--teal); }
 
 .about__body .bullets { gap: 8px; }
 
-/* wspolpraca.html — spis treści pod leadem w nagłówku strony */
+/* pierwsza-wizyta.html — spis treści pod leadem w nagłówku strony */
 .toc {
   display: flex;
   flex-wrap: wrap;
@@ -793,7 +793,7 @@ a:hover { color: var(--teal); }
 .toc a { color: var(--teal); text-underline-offset: 3px; }
 .toc a:hover { color: var(--cta-hover); }
 
-/* wspolpraca.html — kilka akapitów w jednym kroku, notka „Wsparcie psychologiczne” pod krokami */
+/* pierwsza-wizyta.html — kilka akapitów w jednym kroku, notka „Wsparcie psychologiczne” pod krokami */
 .step__text + .step__text { margin-top: 10px; }
 .card--row { background: var(--row); margin-top: 32px; }
 .card--row .card__text { color: var(--body); }

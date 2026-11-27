@@ -16,7 +16,7 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 
 - Czysty HTML + CSS + ~2 KB JS (`js/nav.js`, menu mobilne). **Zero build stepu, zero frameworków, zero npm, zero CMS.** Strona ma działać po wrzuceniu plików na dowolny hosting i z `file://`.
 - Strona główna `index.html` (one-pager), sekcje z kotwicami. Kolejność: `#top` (hero) → `#o-mnie` → `#jak-pracuje` → `#oferta` → `#cennik` → `#gabinety` → `#opinie` (ukryta) → `#kontakt`.
-- Dwie podstrony (decyzja właściciela): `kwalifikacje.html` (pełne bio, certyfikaty z galerią skanów, szkolenia) i `wspolpraca.html` (pierwsze spotkania, kontrakt, poufność). Link „Pierwsza wizyta” w menu prowadzi do `wspolpraca.html`. Linki do podstron są zawsze bez kotwic (otwierają górę strony), a `scroll-behavior: smooth` jest wyłączone (decyzja właściciela); poza tym do podstron prowadzą linki w treści i w stopce. `kwalifikacje.html` nie ma hero (decyzja właściciela), ma tylko ukryty `<h1 class="visually-hidden">`.
+- Dwie podstrony (decyzja właściciela): `kwalifikacje.html` (pełne bio, certyfikaty z galerią skanów, szkolenia) i `pierwsza-wizyta.html` (pierwsze spotkania, kontrakt, poufność). Link „Pierwsza wizyta” w menu prowadzi do `pierwsza-wizyta.html`. Linki do podstron są zawsze bez kotwic (otwierają górę strony), a `scroll-behavior: smooth` jest wyłączone (decyzja właściciela); poza tym do podstron prowadzą linki w treści i w stopce. `kwalifikacje.html` nie ma hero (decyzja właściciela), ma tylko ukryty `<h1 class="visually-hidden">`.
 - Cel biznesowy: telefon lub e-mail. **Brak formularza, rezerwacji, czatu** to świadome decyzje właściciela, nie braki.
 - Ścieżki tylko **względne** (`css/…`, `img/…`), bo strona bywa serwowana z podkatalogu (`/ewa-psycho-webpage/` na github.io).
 
@@ -78,7 +78,7 @@ Serwer podglądu: konfiguracja `static` w `.claude/launch.json` (`python3 -m htt
 
 | Co | Gdzie |
 |---|---|
-| Treść strony | `index.html`, `kwalifikacje.html`, `wspolpraca.html` (komentarze `TODO: klientka` wskazują placeholdery) |
+| Treść strony | `index.html`, `kwalifikacje.html`, `pierwsza-wizyta.html` (komentarze `TODO: klientka` wskazują placeholdery) |
 | Skany certyfikatów | `img/certyfikaty/` (galeria w `kwalifikacje.html`) |
 | Style, tokeny kolorów | `css/styles.css` (`:root` na górze), `css/fonts.css` |
 | Menu mobilne | `js/nav.js` |
