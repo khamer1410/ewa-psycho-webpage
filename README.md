@@ -10,7 +10,7 @@ Strona nie używa cookies, analityki ani zewnętrznych skryptów i fontów (wszy
 |---|---|
 | `index.html` | Strona główna (wszystkie sekcje: O mnie, Jak pracuję, Oferta, Cennik, Gabinety, Kontakt…). |
 | `kwalifikacje.html` | Podstrona „Kwalifikacje”: pełne bio, certyfikaty (lista i galeria skanów), szkolenia. |
-| `pierwsza-wizyta.html` | Podstrona „Jak wygląda współpraca”: pierwsze spotkania, zasady współpracy (kontrakt), poufność. |
+| `pierwsza-wizyta.html` | Podstrona „Pierwsza wizyta”: pierwsze spotkania, zasady współpracy (kontrakt), poufność. |
 | `css/styles.css` | Wygląd strony (kolory, odstępy, układ na telefonie i komputerze). |
 | `css/fonts.css` | Podpięcie fontów z folderu `fonts/`. |
 | `fonts/` | Fonty Newsreader i Lato (pliki `.woff2`, z polskimi znakami). |
@@ -64,7 +64,7 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 Menu u góry jest takie samo na wszystkich stronach i prowadzi do sekcji strony głównej (`index.html#…`). Do podstron prowadzą linki w treści i w stopce:
 
 - **`kwalifikacje.html` („Kwalifikacje”)**: pełny tekst o wykształceniu i doświadczeniu, lista certyfikatów z galerią skanów, lista szkoleń. Link „Pełne wykształcenie, szkolenia i certyfikaty” na końcu sekcji O mnie na stronie głównej oraz w stopce.
-- **`pierwsza-wizyta.html` („Jak wygląda współpraca”)**: pełny opis pierwszych spotkań, zasady współpracy (czas sesji, ceny, umawianie, płatności, rachunek, częstotliwość, odwołania, kodeks etyczny, superwizja) i poufność z wyjątkami. Linki pod krokami „Pierwsza wizyta” i pod cennikiem na stronie głównej oraz w stopce.
+- **`pierwsza-wizyta.html` („Pierwsza wizyta”)**: pełny opis pierwszych spotkań, zasady współpracy (czas sesji, ceny, umawianie, płatności, rachunek, częstotliwość, odwołania, kodeks etyczny, superwizja) i poufność z wyjątkami. Linki pod krokami „Pierwsza wizyta” i pod cennikiem na stronie głównej oraz w stopce.
 
 Każda podstrona ma własny tytuł, opis i adres kanoniczny w `<head>`. Przy zmianie cen trzeba je poprawić w trzech miejscach: cennik na stronie głównej, JSON-LD w `index.html` i sekcja „Zasady współpracy” w `pierwsza-wizyta.html`.
 
