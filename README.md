@@ -1,6 +1,6 @@
 # Strona psychoterapeutki — instrukcja
 
-Statyczna strona internetowa: strona główna (`index.html`) i dwie podstrony (`o-mnie.html`, `wspolpraca.html`). Nie wymaga bazy danych, PHP, WordPressa ani instalowania czegokolwiek. Działa po wrzuceniu plików na dowolny hosting, a także po otwarciu `index.html` bezpośrednio z dysku.
+Statyczna strona internetowa: strona główna (`index.html`) i dwie podstrony (`kwalifikacje.html`, `wspolpraca.html`). Nie wymaga bazy danych, PHP, WordPressa ani instalowania czegokolwiek. Działa po wrzuceniu plików na dowolny hosting, a także po otwarciu `index.html` bezpośrednio z dysku.
 
 Strona nie używa cookies, analityki ani zewnętrznych skryptów i fontów (wszystko jest w tym folderze). Nie ma też formularza kontaktowego, kontakt odbywa się telefonicznie lub mailowo.
 
@@ -9,14 +9,14 @@ Strona nie używa cookies, analityki ani zewnętrznych skryptów i fontów (wszy
 | Plik / folder | Do czego służy |
 |---|---|
 | `index.html` | Strona główna (wszystkie sekcje: O mnie, Jak pracuję, Oferta, Cennik, Gabinety, Kontakt…). |
-| `o-mnie.html` | Podstrona „O mnie”: pełne bio, certyfikaty (lista i galeria skanów), szkolenia. |
+| `kwalifikacje.html` | Podstrona „Kwalifikacje”: pełne bio, certyfikaty (lista i galeria skanów), szkolenia. |
 | `wspolpraca.html` | Podstrona „Jak wygląda współpraca”: pierwsze spotkania, zasady współpracy (kontrakt), poufność. |
 | `css/styles.css` | Wygląd strony (kolory, odstępy, układ na telefonie i komputerze). |
 | `css/fonts.css` | Podpięcie fontów z folderu `fonts/`. |
 | `fonts/` | Fonty Newsreader i Figtree (pliki `.woff2`, z polskimi znakami). |
 | `js/nav.js` | Menu rozwijane na telefonie (przycisk z trzema kreskami). |
 | `img/` | Zdjęcia (na razie brak) oraz mapa sekcji Gabinety (`mapa-warszawa.webp` i jej parametry w `mapa-warszawa.json`). |
-| `img/certyfikaty/` | Skany dyplomów i certyfikatów (WebP) do galerii na podstronie „O mnie”. |
+| `img/certyfikaty/` | Skany dyplomów i certyfikatów (WebP) do galerii na podstronie „Kwalifikacje”. |
 | `scripts/make-map.py` | Skrypt generujący mapę z OpenStreetMap (uruchamiany ręcznie, tylko przy zmianie adresu). |
 | `favicon.svg` | Ikonka w karcie przeglądarki (litera „E”). |
 | `robots.txt` | Informacja dla wyszukiwarek, że stronę można indeksować. |
@@ -45,7 +45,7 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 
 **Do potwierdzenia lub dostarczenia przez klientkę**
 - [ ] Telefon: czy numer +48 502 733 097 (podany przy BLIK-u) jest też numerem kontaktowym. Występuje w sekcji powitalnej, w Kontakcie, w JSON-LD (`"telephone"`) i na obu podstronach.
-- [ ] Certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer w `o-mnie.html` (teraz „w trakcie”) i dodać skan do galerii.
+- [ ] Certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer w `kwalifikacje.html` (teraz „w trakcie”) i dodać skan do galerii.
 - [ ] Faktura: w cenniku źródłowym jest „faktura lub rachunek imienny”, w kontrakcie tylko rachunek. Na stronie jest tylko rachunek imienny; jeśli wystawiane są też faktury, dopisać.
 - [ ] Adresy gabinetów: wpisane ul. Łucka 18, 00-845 i ul. Gagarina 17, 00-753 (kody pocztowe z OpenStreetMap). Jeśli trzeba, dopisać numer lokalu.
 - [ ] Mapa: po podaniu dokładnych adresów przegenerować ją skryptem i przekleić pozycje pinezek (opis w „Gabinety i mapa”).
@@ -63,12 +63,12 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 
 Menu u góry jest takie samo na wszystkich stronach i prowadzi do sekcji strony głównej (`index.html#…`). Do podstron prowadzą linki w treści i w stopce:
 
-- **`o-mnie.html` („O mnie”)**: pełny tekst o wykształceniu i doświadczeniu, lista certyfikatów z galerią skanów, lista szkoleń. Link „Pełne wykształcenie, szkolenia i certyfikaty” na końcu sekcji O mnie na stronie głównej oraz w stopce.
+- **`kwalifikacje.html` („Kwalifikacje”)**: pełny tekst o wykształceniu i doświadczeniu, lista certyfikatów z galerią skanów, lista szkoleń. Link „Pełne wykształcenie, szkolenia i certyfikaty” na końcu sekcji O mnie na stronie głównej oraz w stopce.
 - **`wspolpraca.html` („Jak wygląda współpraca”)**: pełny opis pierwszych spotkań, zasady współpracy (czas sesji, ceny, umawianie, płatności, rachunek, częstotliwość, odwołania, kodeks etyczny, superwizja) i poufność z wyjątkami. Linki pod krokami „Pierwsza wizyta” i pod cennikiem na stronie głównej oraz w stopce.
 
 Każda podstrona ma własny tytuł, opis i adres kanoniczny w `<head>`. Przy zmianie cen trzeba je poprawić w trzech miejscach: cennik na stronie głównej, JSON-LD w `index.html` i sekcja „Zasady współpracy” w `wspolpraca.html`.
 
-**Galeria certyfikatów** (w `o-mnie.html`): każda miniatura to link do pliku w `img/certyfikaty/`, który otwiera skan w nowej karcie. Aby dodać nowy skan (np. certyfikat PRP): **nigdy nie wrzucać PDF-a do repo**, bo repozytorium jest publiczne, a w PDF-ie zakrycia bywają osobną warstwą, którą da się zdjąć. Zamienić PDF na obraz (np. `qlmanage -t -s 1600 -o /tmp plik.pdf`, potem `cwebp -q 80 -metadata none plik.png -o img/certyfikaty/nazwa.webp`), obejrzeć wynik i dodać miniaturę jak pozostałe, z prawdziwymi `width` i `height`.
+**Galeria certyfikatów** (w `kwalifikacje.html`): każda miniatura to link do pliku w `img/certyfikaty/`, który otwiera skan w nowej karcie. Aby dodać nowy skan (np. certyfikat PRP): **nigdy nie wrzucać PDF-a do repo**, bo repozytorium jest publiczne, a w PDF-ie zakrycia bywają osobną warstwą, którą da się zdjąć. Zamienić PDF na obraz (np. `qlmanage -t -s 1600 -o /tmp plik.pdf`, potem `cwebp -q 80 -metadata none plik.png -o img/certyfikaty/nazwa.webp`), obejrzeć wynik i dodać miniaturę jak pozostałe, z prawdziwymi `width` i `height`.
 
 ## Gabinety i mapa
 
@@ -91,7 +91,7 @@ Jeśli gabinety będą bardzo daleko od siebie, skrypt ostrzeże, że pinezki si
 
 ## Jak dodać zdjęcia
 
-Na stronie jest jedno zdjęcie: portret w sekcji powitalnej strony głównej (`img/portret-hero.webp`, pion 4:5, 1000 × 1250 px). Puste miejsce na drugie zdjęcie w sekcji „O mnie” zostało usunięte, a podstrona „O mnie” nie ma już nagłówka ze zdjęciem.
+Na stronie jest jedno zdjęcie: portret w sekcji powitalnej strony głównej (`img/portret-hero.webp`, pion 4:5, 1000 × 1250 px). Puste miejsce na drugie zdjęcie w sekcji „O mnie” zostało usunięte, a podstrona „Kwalifikacje” nie ma nagłówka ze zdjęciem.
 
 Nowe zdjęcie: format WebP, skompresowany do ok. 200–400 KB (np. w squoosh.app), w folderze `img/`, z atrybutami `width`, `height` i `alt` w kodzie.
 

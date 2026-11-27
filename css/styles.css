@@ -106,6 +106,8 @@ a:hover { color: var(--teal); }
 /* Sekcje: 96px pionowo */
 .sec { padding-top: 96px; padding-bottom: 96px; }
 .sec--bottom { padding-bottom: 96px; }
+/* Skok do kotwicy: sekcje bez górnego paddingu nie przyklejają się do górnej krawędzi okna */
+.sec--bottom[id] { scroll-margin-top: 48px; }
 
 /* Pasy pełnej szerokości: 88px pionowo */
 .band { padding-top: 88px; padding-bottom: 88px; }
@@ -739,6 +741,7 @@ a:hover { color: var(--teal); }
   .sec { padding-top: 64px; padding-bottom: 64px; }
   .hero { padding-top: 48px; }
   .sec--bottom { padding-bottom: 64px; }
+  .sec--bottom[id] { scroll-margin-top: 32px; }
 
   .h2 { font-size: 32px; }
 
@@ -768,7 +771,7 @@ a:hover { color: var(--teal); }
 }
 
 /* ==========================================================================
-   Podstrony: o-mnie.html, wspolpraca.html
+   Podstrony: kwalifikacje.html, wspolpraca.html
    Układ jak na stronie głównej: hero → sekcje .g2 → pas .band--mint → sekcje
    → pas .band--teal (kontakt). Poniżej tylko to, czego brakuje w klockach.
    ========================================================================== */
@@ -798,7 +801,7 @@ a:hover { color: var(--teal); }
 /* Karty w 2 kolumnach (zasady współpracy, kwalifikacje na pasie mięty) */
 .offer--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-/* o-mnie.html — galeria miniatur skanów certyfikatów (bez JS: link otwiera skan w nowej karcie) */
+/* kwalifikacje.html — galeria miniatur skanów certyfikatów (bez JS: link otwiera skan w nowej karcie) */
 .certs {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

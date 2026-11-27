@@ -16,7 +16,7 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 
 - Czysty HTML + CSS + ~2 KB JS (`js/nav.js`, menu mobilne). **Zero build stepu, zero frameworków, zero npm, zero CMS.** Strona ma działać po wrzuceniu plików na dowolny hosting i z `file://`.
 - Strona główna `index.html` (one-pager), sekcje z kotwicami. Kolejność: `#top` (hero) → `#o-mnie` → `#jak-pracuje` → `#oferta` → `#cennik` → `#gabinety` → `#opinie` (ukryta) → `#kontakt`.
-- Dwie podstrony (decyzja właściciela): `o-mnie.html` (pełne bio, certyfikaty z galerią skanów, szkolenia) i `wspolpraca.html` (pierwsze spotkania, kontrakt, poufność). Link „Pierwsza wizyta” w menu prowadzi do `wspolpraca.html`. Linki do podstron są zawsze bez kotwic (otwierają górę strony), a `scroll-behavior: smooth` jest wyłączone (decyzja właściciela); poza tym do podstron prowadzą linki w treści i w stopce. `o-mnie.html` nie ma hero (decyzja właściciela), ma tylko ukryty `<h1 class="visually-hidden">`.
+- Dwie podstrony (decyzja właściciela): `kwalifikacje.html` (pełne bio, certyfikaty z galerią skanów, szkolenia) i `wspolpraca.html` (pierwsze spotkania, kontrakt, poufność). Link „Pierwsza wizyta” w menu prowadzi do `wspolpraca.html`. Linki do podstron są zawsze bez kotwic (otwierają górę strony), a `scroll-behavior: smooth` jest wyłączone (decyzja właściciela); poza tym do podstron prowadzą linki w treści i w stopce. `kwalifikacje.html` nie ma hero (decyzja właściciela), ma tylko ukryty `<h1 class="visually-hidden">`.
 - Cel biznesowy: telefon lub e-mail. **Brak formularza, rezerwacji, czatu** to świadome decyzje właściciela, nie braki.
 - Ścieżki tylko **względne** (`css/…`, `img/…`), bo strona bywa serwowana z podkatalogu (`/ewa-psycho-webpage/` na github.io).
 
@@ -46,7 +46,7 @@ Statyczna strona psychoterapeutki (jednoosobowa działalność, Warszawa + onlin
 1. Skopiuj markup najbliższej istniejącej sekcji (`<section id="…" class="wrap g2 sec" aria-labelledby="…-title">`), z `.eyebrow` i `.h2` po lewej oraz treścią po prawej. Pasy pełnej szerokości (`.band`) to wyjątek, nie reguła: na stronie są dwa (Oferta, Kontakt) i więcej nie potrzeba.
 2. Dobierz `.sec` lub `.sec--bottom` tak, żeby odstęp między sekcjami był taki sam jak u sąsiadów (96px desktop / 64px mobile, pasy 88px). Zmierz w przeglądarce, nie zgaduj.
 3. Semantyka: jeden `<h1>` na stronie (hero), sekcje mają `<h2>`, elementy w sekcji `<h3>`. Listy jako `<ul>/<ol>/<dl>`, dane kontaktowe w `<address>`, cytaty w `<figure><blockquote>`.
-4. Link w nawigacji dodaj tylko dla sekcji, do której użytkownik realnie chce skakać (dziś 5 linków: O mnie, Oferta, Pierwsza wizyta, Cennik, Kontakt → `#gabinety`, eyebrow sekcji to „KONTAKT”; więcej zaczyna się nie mieścić przy 1120px). Dodając, zaktualizuj oba miejsca: `.nav__links` i listę w menu mobilnym.
+4. Link w nawigacji dodaj tylko dla sekcji, do której użytkownik realnie chce skakać (dziś 5 linków: Kwalifikacje → `kwalifikacje.html`, Oferta, Pierwsza wizyta, Cennik, Kontakt → `#gabinety`, eyebrow sekcji to „KONTAKT”; więcej zaczyna się nie mieścić przy 1120px). Dodając, zaktualizuj oba miejsca: `.nav__links` i listę w menu mobilnym.
 5. Jeśli sekcja wprowadza dane strukturalne (adresy, godziny, cennik, FAQ), zaktualizuj JSON-LD w `<head>`. Używaj tylko typów, które istnieją w schema.org (sprawdź). Po edycji zweryfikuj `JSON.parse`.
 6. Dopisz do `README.md` (dokument dla klientki, prosty język) wszystko, co klientka musi uzupełnić lub może włączyć/wyłączyć.
 
@@ -78,8 +78,8 @@ Serwer podglądu: konfiguracja `static` w `.claude/launch.json` (`python3 -m htt
 
 | Co | Gdzie |
 |---|---|
-| Treść strony | `index.html`, `o-mnie.html`, `wspolpraca.html` (komentarze `TODO: klientka` wskazują placeholdery) |
-| Skany certyfikatów | `img/certyfikaty/` (galeria w `o-mnie.html`) |
+| Treść strony | `index.html`, `kwalifikacje.html`, `wspolpraca.html` (komentarze `TODO: klientka` wskazują placeholdery) |
+| Skany certyfikatów | `img/certyfikaty/` (galeria w `kwalifikacje.html`) |
 | Style, tokeny kolorów | `css/styles.css` (`:root` na górze), `css/fonts.css` |
 | Menu mobilne | `js/nav.js` |
 | Instrukcja i checklista dla klientki | `README.md` |
