@@ -48,8 +48,6 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 - [ ] Certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer w `o-mnie.html` (teraz „w trakcie”) i dodać skan do galerii.
 - [ ] Faktura: w cenniku źródłowym jest „faktura lub rachunek imienny”, w kontrakcie tylko rachunek. Na stronie jest tylko rachunek imienny; jeśli wystawiane są też faktury, dopisać.
 - [ ] Adresy gabinetów: wpisane ul. Łucka 18, 00-845 i ul. Gagarina 17, 00-753 (kody pocztowe z OpenStreetMap). Jeśli trzeba, dopisać numer lokalu.
-- [ ] Dni i godziny przyjęć: 3 karty w sekcji Gabinety (obecnie przykładowe) oraz JSON-LD (`"openingHoursSpecification"`).
-- [ ] Platforma spotkań online (Google Meet, Zoom lub inna): karta „Online” w sekcji Gabinety.
 - [ ] Mapa: po podaniu dokładnych adresów przegenerować ją skryptem i przekleić pozycje pinezek (opis w „Gabinety i mapa”).
 - [ ] Opinie: 3 cytaty, tylko jeśli sekcja ma być widoczna (opis poniżej).
 - [ ] Obrazek do udostępniania (`og-image.png`, 1200×630 px): plik trzeba przygotować i wrzucić do głównego folderu; na razie go nie ma.
@@ -74,12 +72,10 @@ Każda podstrona ma własny tytuł, opis i adres kanoniczny w `<head>`. Przy zmi
 
 ## Gabinety i mapa
 
-Sekcja „Gabinety” (między Cennikiem a Kontaktem) pokazuje dwa gabinety w Warszawie i spotkania online: mapę z dwiema pinezkami oraz trzy karty z adresem, dniami i godzinami.
+Sekcja „Gabinety” (między Cennikiem a Kontaktem) pokazuje dwa gabinety w Warszawie i spotkania online: mapę z dwiema pinezkami oraz trzy karty z adresem. Dni i godzin przyjęć celowo nie podajemy (terminy ustalane przy pierwszym kontakcie).
 
 **Co podmienić w `index.html`** (miejsca oznaczone `TODO: klientka`):
-- dni i godziny w każdej karcie (format: małe litery, zakres z półpauzą, np. `poniedziałek, środa` / `9:00–17:00`),
-- platformę w karcie „Online”,
-- te same dane w JSON-LD w `<head>` (blok `"location"`): adres, współrzędne (`"geo"`) i godziny (`"openingHoursSpecification"`, dni po angielsku, np. `https://schema.org/Monday`, godziny w formacie `09:00`).
+- te same dane w JSON-LD w `<head>` (blok `"location"`): adres i współrzędne (`"geo"`).
 - Linki „Jak dojechać” prowadzą do wyszukiwania ulicy w Google Maps. Po wpisaniu numeru można go dodać do adresu w linku (np. `query=ul.%20%C5%81ucka%2012%2C%20Warszawa`).
 
 **Mapa** to zwykły obrazek (`img/mapa-warszawa.webp`, 1200×900 px) wygenerowany raz z kafelków OpenStreetMap. Strona nie łączy się z żadnym serwerem map, nie ma Google Maps ani cookies. Pinezki to elementy HTML nałożone na obrazek; ich położenie zapisane jest w procentach w atrybucie `style="--x:..%;--y:..%"`. Podpis „© OpenStreetMap contributors” pod mapą jest wymagany licencją OSM i nie wolno go usuwać.
@@ -107,7 +103,7 @@ Aby ją pokazać: w `index.html` znajdź `<section id="opinie" ... hidden>` i us
 
 ## SEO (widoczność w Google)
 
-Strona ma **podstawowe** ustawienia SEO: tytuł i opis strony, adres kanoniczny, dane do udostępniania (Open Graph), mapę strony oraz dane strukturalne (JSON-LD) z adresami obu gabinetów, godzinami, telefonem i cennikiem. Imię i nazwisko, telefon, ceny, certyfikaty i członkostwa są już prawdziwe; adresy, godziny i e-mail (domena) to nadal wartości przykładowe.
+Strona ma **podstawowe** ustawienia SEO: tytuł i opis strony, adres kanoniczny, dane do udostępniania (Open Graph), mapę strony oraz dane strukturalne (JSON-LD) z adresami obu gabinetów, telefonem i cennikiem. Imię i nazwisko, telefon, adresy, ceny, certyfikaty i członkostwa są już prawdziwe; e-mail (domena) to nadal wartość przykładowa.
 
 Po wpisaniu prawdziwych danych warto dopracować:
 - tytuł i opis strony o frazy lokalne (np. dzielnica Warszawy, „psychoterapeuta Mokotów”, „terapia traumy Warszawa”),

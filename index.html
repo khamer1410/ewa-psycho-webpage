@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/nav.js" defer></script>
 
-<!-- TODO: klientka — w JSON-LD do uzupełnienia: e-mail (domena), adresy obu gabinetów w "location" (ulica z numerem, kod pocztowy, współrzędne, dni i godziny), domena -->
+<!-- TODO: klientka — w JSON-LD do uzupełnienia: e-mail (domena), adresy obu gabinetów w "location" (ulica z numerem, kod pocztowy, współrzędne), domena -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,15 +91,7 @@
         "postalCode": "00-845",
         "addressCountry": "PL"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 52.23269, "longitude": 20.98764 },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["https://schema.org/Monday", "https://schema.org/Wednesday"],
-          "opens": "09:00",
-          "closes": "17:00"
-        }
-      ]
+      "geo": { "@type": "GeoCoordinates", "latitude": 52.23269, "longitude": 20.98764 }
     },
     {
       "@type": "Place",
@@ -111,15 +103,7 @@
         "postalCode": "00-753",
         "addressCountry": "PL"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 52.20633, "longitude": 21.03996 },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["https://schema.org/Tuesday", "https://schema.org/Thursday"],
-          "opens": "12:00",
-          "closes": "20:00"
-        }
-      ]
+      "geo": { "@type": "GeoCoordinates", "latitude": 52.20633, "longitude": 21.03996 }
     }
   ],
   "areaServed": [
@@ -370,34 +354,18 @@
         <span class="place__num" aria-hidden="true">1</span>
         <h3 class="place__title">Wola</h3>
         <address class="place__address">ul. Łucka 18, 00-845 Warszawa</address>
-        <!-- TODO: klientka — dni i godziny przyjęć na Woli (zaktualizować też w JSON-LD w <head>) -->
-        <dl class="place__hours">
-          <dt>poniedziałek, środa</dt>
-          <dd>9:00–17:00</dd>
-        </dl>
         <a class="place__link link-ext" href="https://www.google.com/maps/search/?api=1&amp;query=%C5%81ucka%2018%2C%2000-845%20Warszawa" target="_blank" rel="noopener">Jak dojechać<span class="visually-hidden"> do gabinetu na Woli (otwiera się w nowej karcie)</span></a>
       </li>
       <li class="place" id="gabinet-2">
         <span class="place__num" aria-hidden="true">2</span>
         <h3 class="place__title">Mokotów</h3>
         <address class="place__address">ul. Gagarina 17, 00-753 Warszawa</address>
-        <!-- TODO: klientka — dni i godziny przyjęć na Mokotowie (zaktualizować też w JSON-LD w <head>) -->
-        <dl class="place__hours">
-          <dt>wtorek, czwartek</dt>
-          <dd>12:00–20:00</dd>
-        </dl>
         <a class="place__link link-ext" href="https://www.google.com/maps/search/?api=1&amp;query=Gagarina%2017%2C%2000-753%20Warszawa" target="_blank" rel="noopener">Jak dojechać<span class="visually-hidden"> do gabinetu na Mokotowie (otwiera się w nowej karcie)</span></a>
       </li>
       <li class="place" id="gabinet-online">
         <span class="place__num" aria-hidden="true">3</span>
         <h3 class="place__title">Online</h3>
-        <!-- TODO: klientka — platforma do spotkań online (Google Meet, Zoom lub inna) -->
-        <p class="place__address">Spotkanie na Google Meet lub Zoom. Link przychodzi mailem dzień wcześniej.</p>
-        <!-- TODO: klientka — dni i godziny spotkań online -->
-        <dl class="place__hours">
-          <dt>piątek</dt>
-          <dd>9:00–15:00</dd>
-        </dl>
+        <p class="place__address">Spotkanie na komunikatorze</p>
       </li>
     </ul>
   </section>
@@ -450,7 +418,7 @@
         </div>
         <div>
           <div class="contact__label">Gabinety</div>
-          <div class="contact__address">Wola, ul. Łucka 18 · Mokotów, ul. Gagarina 17 · Online<br><a class="contact__more" href="#gabinety">Szczegóły i godziny wyżej</a></div>
+          <div class="contact__address">Wola, ul. Łucka 18 · Mokotów, ul. Gagarina 17 · Online<br><a class="contact__more" href="#gabinety">Szczegóły wyżej</a></div>
         </div>
       </address>
     </div>
