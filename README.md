@@ -47,7 +47,7 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 - [ ] Telefon: czy numer +48 502 733 097 (podany przy BLIK-u) jest też numerem kontaktowym. Występuje w sekcji powitalnej, w Kontakcie, w JSON-LD (`"telephone"`) i na obu podstronach.
 - [ ] Certyfikat Polskiej Rady Psychoterapii: po otrzymaniu wpisać rok i numer w `o-mnie.html` (teraz „w trakcie”) i dodać skan do galerii.
 - [ ] Faktura: w cenniku źródłowym jest „faktura lub rachunek imienny”, w kontrakcie tylko rachunek. Na stronie jest tylko rachunek imienny; jeśli wystawiane są też faktury, dopisać.
-- [ ] Adresy gabinetów (Wola, ul. Łucka i Mokotów, ul. Sielecka): numer budynku/lokalu i kod pocztowy w kartach sekcji Gabinety (obecnie `00/0` i `00-000`), krótki zapis w sekcji Kontakt oraz JSON-LD (`"location"` → `"streetAddress"`, `"postalCode"`).
+- [ ] Adresy gabinetów: wpisane ul. Łucka 18, 00-845 i ul. Gagarina 17, 00-753 (kody pocztowe z OpenStreetMap). Jeśli trzeba, dopisać numer lokalu.
 - [ ] Dni i godziny przyjęć: 3 karty w sekcji Gabinety (obecnie przykładowe) oraz JSON-LD (`"openingHoursSpecification"`).
 - [ ] Platforma spotkań online (Google Meet, Zoom lub inna): karta „Online” w sekcji Gabinety.
 - [ ] Mapa: po podaniu dokładnych adresów przegenerować ją skryptem i przekleić pozycje pinezek (opis w „Gabinety i mapa”).
@@ -77,7 +77,6 @@ Każda podstrona ma własny tytuł, opis i adres kanoniczny w `<head>`. Przy zmi
 Sekcja „Gabinety” (między Cennikiem a Kontaktem) pokazuje dwa gabinety w Warszawie i spotkania online: mapę z dwiema pinezkami oraz trzy karty z adresem, dniami i godzinami.
 
 **Co podmienić w `index.html`** (miejsca oznaczone `TODO: klientka`):
-- numery budynków/lokali i kody pocztowe w kartach (`ul. Łucka 00/0, 00-000 Warszawa`, `ul. Sielecka 00/0, 00-000 Warszawa`),
 - dni i godziny w każdej karcie (format: małe litery, zakres z półpauzą, np. `poniedziałek, środa` / `9:00–17:00`),
 - platformę w karcie „Online”,
 - te same dane w JSON-LD w `<head>` (blok `"location"`): adres, współrzędne (`"geo"`) i godziny (`"openingHoursSpecification"`, dni po angielsku, np. `https://schema.org/Monday`, godziny w formacie `09:00`).

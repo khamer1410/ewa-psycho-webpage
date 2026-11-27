@@ -42,10 +42,6 @@ address { font-style: normal; }
 /* Atrybut hidden zawsze wygrywa (m.in. sekcja Opinie, przycisk menu bez JS). */
 [hidden] { display: none !important; }
 
-@media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior: smooth; }
-}
-
 body {
   background: var(--bg);
   color: var(--ink);
@@ -251,7 +247,7 @@ a:hover { color: var(--teal); }
 .hero__title {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(38px, 5.5vw, 64px);
+  font-size: clamp(38px, 5vw, 58px);
   line-height: 1.05;
   letter-spacing: -.015em;
   margin: 0 0 24px;
