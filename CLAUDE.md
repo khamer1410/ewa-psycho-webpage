@@ -95,5 +95,5 @@ Serwer podglądu: konfiguracja `static` w `.claude/launch.json` (`python3 -m htt
 - Brak formularza, brak polityki prywatności, brak cookies.
 - Opinie ukryte.
 - Mapa statyczna, nie Google Maps.
-- Hosting: GitHub Pages z gałęzi `prod`; docelowa domena `ewa.hamerszmit.com` (w kodzie wciąż stare `ewahamerszmit.pl` w canonical, OG, JSON-LD, robots i sitemap — do podmiany przy konfiguracji domeny).
+- Hosting: GitHub Pages z gałęzi `prod`, domena `ewa.hamerszmit.com` (plik `CNAME` w repo — nie usuwać; bez niego GitHub sam commituje CNAME na `prod` i gałęzie się rozjeżdżają). Wyjątek od ścieżek względnych: `404.html` używa ścieżek od `/`, bo GitHub serwuje go pod dowolnym adresem.
 - Wydanie (aktualizacja `prod`) robi tylko właściciel (punkt 1).

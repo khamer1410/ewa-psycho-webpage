@@ -53,8 +53,8 @@ Każde miejsce do zmiany jest w plikach oznaczone komentarzem `TODO: klientka`. 
 - [ ] Obrazek do udostępniania (`og-image.png`, 1200×630 px): plik trzeba przygotować i wrzucić do głównego folderu; na razie go nie ma.
 
 **Domena i e-mail**
-- [ ] Kupić domenę `ewahamerszmit.pl`. Adres jest już wpisany w `canonical`, `og:url`, `og:image` i JSON-LD na wszystkich trzech stronach oraz w `robots.txt` i `sitemap.xml`.
-- [ ] Ustawić skrzynkę lub przekierowanie `kontakt@ewahamerszmit.pl` na prywatną skrzynkę Gmail. Ten adres jest na stronie głównej (Kontakt, JSON-LD) i w `pierwsza-wizyta.html` (rachunek imienny). Prywatny adres Gmail celowo nie jest publikowany.
+- [x] Domena: strona działa pod `https://ewa.hamerszmit.com/` (plik `CNAME`, wpis CNAME `ewa` → `khamer1410.github.io.` w OVH). Adres jest wpisany w `canonical`, `og:url`, `og:image`, JSON-LD, `robots.txt` i `sitemap.xml`.
+- [ ] E-mail: na stronie wciąż jest `kontakt@ewahamerszmit.pl` (nieistniejąca domena). Wybrać adres (np. na `hamerszmit.com`; na `ewa.hamerszmit.com` nie da się łatwo, bo CNAME wyklucza MX), ustawić skrzynkę lub przekierowanie na Gmail i podmienić. Ten adres jest na stronie głównej (Kontakt, JSON-LD) i w `pierwsza-wizyta.html` (rachunek imienny). Prywatny adres Gmail celowo nie jest publikowany.
 
 **Świadomie nie na stronie**
 - Numer rachunku bankowego. W treści jest „przelewem na rachunek podany po pierwszej sesji”. Numeru nie należy dopisywać do żadnego pliku w tym folderze (repozytorium jest publiczne).

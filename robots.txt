@@ -1,5 +1,4 @@
-# TODO: klientka — domena ewahamerszmit.pl jeszcze niekupiona
 User-agent: *
 Allow: /
 
-Sitemap: https://ewahamerszmit.pl/sitemap.xml
+Sitemap: https://ewa.hamerszmit.com/sitemap.xml
