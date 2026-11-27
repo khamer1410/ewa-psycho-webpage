@@ -477,13 +477,17 @@ a:hover { color: var(--teal); }
 
 .price {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 24px;
+  gap: 4px 24px;
   background: var(--row);
   border-radius: 16px;
   padding: 22px 28px;
 }
+/* Nazwa zawija się w swojej kolumnie; na bardzo wąskich ekranach (<375 px) kwota schodzi pod nazwę,
+   zamiast rozpychać stronę w poziomie. */
+.price > :first-child { flex: 1 1 10rem; min-width: 0; }
 .price__name { font-size: 18px; font-weight: 700; }
 .price__meta { font-size: 14px; color: var(--muted); }
 .price__amount {
